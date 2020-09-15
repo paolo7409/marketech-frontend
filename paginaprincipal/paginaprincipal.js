@@ -1,16 +1,24 @@
 // Busqueda de un producto en la barra de navegacion
 
-//const barradenavegaciondepaginaprincipal = document.getElementById("barradenavegaciondepaginaprincipal")
+const contenedordeinputdebusquedadeproductos = document.getElementById("contenedordeinputdebusquedadeproductos")
 
-//const inputdebusquedadeproductos = document.getElementById("inputdebusquedadeproductos")
+const inputdebusquedadeproductos = document.getElementById("inputdebusquedadeproductos")
 
-//inputdebusquedadeproductos.addEventListener("focus", () => {
-    //console.log("se esta escribiendo algo en la barra de navegacion")
-    //let opcionesdebusquedadebarradenavegacion = document.createElement("div")
-    //opcionesdebusquedadebarradenavegacion.setAttribute("class","opcionesdebusquedadebarradenavegacion")
-    //opcionesdebusquedadebarradenavegacion.textContent = "Hola"
-    //barradenavegaciondepaginaprincipal.appendChild(opcionesdebusquedadebarradenavegacion)
-//})
+let opcionesdebusquedadebarradenavegacion = document.createElement("div")
+opcionesdebusquedadebarradenavegacion.setAttribute("class","opcionesdebusquedadebarradenavegacion")
+
+inputdebusquedadeproductos.addEventListener("keyup", () => {
+    console.log("se esta escribiendo algo en la barra de navegacion")
+    opcionesdebusquedadebarradenavegacion.textContent = inputdebusquedadeproductos.value
+    console.log(inputdebusquedadeproductos.value)
+    contenedordeinputdebusquedadeproductos.appendChild(opcionesdebusquedadebarradenavegacion)
+
+    let resultadosdebusquedadebarradenavegacion = []
+})
+
+inputdebusquedadeproductos.addEventListener("blur", () => {
+    opcionesdebusquedadebarradenavegacion.remove()
+})
 
 
 // -----------------------------------------------------------------------------------------
