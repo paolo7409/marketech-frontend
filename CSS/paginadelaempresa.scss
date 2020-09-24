@@ -1,0 +1,233 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadelaempresa";
+
+/* Contenedor de pagina de categorias */
+
+@include contenedorgeneral($paginadetrabajo,2000px,1900px,1900px,1900px,1900px,2000px,2000px);
+
+/* ------------------------------------------------------- */
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+
+
+/* Informacion de la empresa */
+
+.contenedordeinformaciondelaempresa{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 1.5fr;
+}
+
+.contenedordenombredelaempresa{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.nombredelaempresa{
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.3em;
+    
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 68px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 63px;
+    }
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 50px;
+    }
+}
+
+.contenedordeinformacionesdelaempresa{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 5%;
+}
+
+.contendordequienessomos{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.contendordecomotrabajamos{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.contenedordesomosdeconfianza{
+    grid-column: 1/2;
+    grid-row: 3/span 1;
+}
+
+.contenedorunainformacion{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.5fr;
+    align-items: center;
+}
+
+.contenedordetitulodeinformacion{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.titulodeinformacion{
+    margin-left: 0.3em;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 29px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 28px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 25px;
+    }
+}
+
+.contendordecontenido{
+    grid-column: 1/2;
+    grid-row: 2/span 1;
+    justify-self: center;
+    width: 98%;
+    height: 95%;
+    border: 2px solid $colordebordes;
+    border-radius: 15px;
+}
+
+.contenidodeinformacion{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 19px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 18px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 15px;
+    }
+}
+
+.contendordecalificaciondelaempresa{
+    grid-column: 1/2;
+    grid-row: 3/span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.contenedordetitulodecalificacion{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.titulodecalificacion{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.3em;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        align-self: flex-end;
+        font-size: 34.5px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        align-self: flex-end;
+        font-size: 34px;
+    }
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        align-self: flex-end;
+        font-size: 30px;
+    }
+}
+
+.contenedordeestrellasdecalificacion{
+    margin-bottom: 7%;
+    grid-column: 1/2;
+    grid-row: 2/span 1;
+    justify-self: center;
+    align-self: center;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        width: 90%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        width: 90%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        width: 95%;
+    }
+}
+
+.estrelladecalificacion{
+    width: 40%;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 42%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        width: 48%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        width: 65%;
+    }
+}
+
+/* ------------------------------------------------------- */
+
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3);
+
+/* ------------------------------------------------------- */

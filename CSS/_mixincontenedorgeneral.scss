@@ -1,0 +1,39 @@
+@mixin contenedorgeneral($paginadetrabajo,$alturainicialdelapagina,$altura2,$altura3,$altura4,$altura5,$altura6,$altura7) {
+    .contenedorde#{$paginadetrabajo}{
+        width: 100%;
+        height: $alturainicialdelapagina;
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 80px 1fr 300px;
+    
+        @media (max-width : 1200px) {
+            height: $altura2;
+            grid-template-rows: 80px 1fr 300px;
+        }
+        
+        @media (max-width : 1100px) {
+            height: $altura3;
+            grid-template-rows: 80px 1fr 300px;
+        }
+        
+        @media (min-width : 481px) and (max-width : 768px) {
+            height: $altura4;
+            grid-template-rows: 80px 1fr 500px;
+        }
+        
+        @media (max-width : 580px) {
+            height: $altura5;
+            grid-template-rows: 80px 1fr 500px;
+        }
+        
+        @media (max-width : 481px) {
+            height: $altura6;
+            grid-template-rows: 80px 1fr 500px;
+        }
+        
+        @media (min-width : 0px) and (max-width : 480px) {
+            height: $altura7;
+            grid-template-rows: 80px 1fr 850px;
+        }
+    }
+}

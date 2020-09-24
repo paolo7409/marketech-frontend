@@ -1,0 +1,250 @@
+@mixin carruseldeproductos {
+    .contenedordecarrusel{
+        grid-column: 1/span 12;
+        grid-row: 2/3;
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .contenedordeimagenesdecarrusel{
+        display: flex;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100%;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .contenedordeimagendecarrusel{
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+    }
+    
+    .imagendecarrusel{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .flechaizquierda{
+        display: flex;
+        justify-items: flex-end;
+        position: relative;
+        left: 20px;
+    
+    
+        @media (min-width : 769px) and (max-width : 1279px) {
+            position: relative;
+            left: 16px;
+        }
+    
+        @media (max-width : 1200px) {
+            position: relative;
+            left: 14px;
+        }
+    
+        @media (max-width : 1100px) {
+            position: relative;
+            left: 12px;
+        }
+    
+        @media (min-width : 481px) and (max-width : 768px) {
+            position: relative;
+            left: 10px;
+        }
+    
+        @media (max-width : 580px) {
+            position: relative;
+            left: 0px;
+        }
+    
+        @media (min-width : 0px) and (max-width : 468px) {
+            position: relative;
+            left:6px;
+        }
+    
+    }
+    
+    .flechaderecha{
+        position: relative;
+        right: 20px;
+    
+        @media (min-width : 769px) and (max-width : 1279px) {
+            position: relative;
+            right: 16px;
+        }
+    
+        @media (max-width : 1200px) {
+            position: relative;
+            right: 14px;
+        }
+    
+        @media (max-width : 1100px) {
+            position: relative;
+            right: 12px;
+        }
+    
+        @media (min-width : 481px) and (max-width : 768px) {
+            position: relative;
+            right: 10px;
+        }
+    
+        @media (max-width : 580px) {
+            position: relative;
+            right: 0px;
+        }
+    
+        @media (min-width : 0px) and (max-width : 468px) {
+            position: relative;
+            right: 6px;
+        }
+    }
+    
+    .contenedordeimagendefecha{
+        position: absolute;
+        width: 80px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .imagendefecha{
+        width: 90px;
+    
+        @media (min-width : 769px) and (max-width : 1279px) {
+            width: 75px;
+            height: 130px;
+        }
+    
+        @media (max-width : 1200px) {
+            width: 70px;
+            height: 120px;
+        }
+    
+        @media (max-width : 1100px) {
+            width: 65px;
+            height: 110px;
+        }
+    
+        @media (min-width : 481px) and (max-width : 768px) {
+            width: 60px;
+            height: 100px;
+        }
+    
+        @media (max-width : 580px) {
+            width: 35px;
+            height: 90px;
+        }
+    
+        @media (min-width : 0px) and (max-width : 468px) {
+            width: 40px;
+            height: 70px;
+        }
+    }
+    
+    .imagendeflechaderecha{
+        @media (min-width : 769px) and (max-width : 1279px) {
+            justify-self: flex-end;
+        }
+    
+        @media (max-width : 1200px) {
+            justify-self: flex-end;
+        }
+    
+        @media (max-width : 1100px) {
+            justify-self: flex-end;
+        }
+    
+        @media (min-width : 481px) and (max-width : 768px) {
+            justify-self: flex-end;
+        }
+    
+        @media (max-width : 580px) {
+            justify-self: flex-end;
+        }
+    
+        @media (min-width : 0px) and (max-width : 468px) {
+            justify-self: flex-end;
+        }
+    }
+    
+    .imagendeflechaizquierda{
+        @media (min-width : 769px) and (max-width : 1279px) {
+            justify-self: flex-start;
+        }
+    
+        @media (max-width : 1200px) {
+            justify-self: flex-start;
+        }
+    
+        @media (max-width : 1100px) {
+            justify-self: flex-start;
+        }
+    
+        @media (min-width : 481px) and (max-width : 768px) {
+            justify-self: flex-start;
+        }
+    
+        @media (max-width : 580px) {
+            justify-self: flex-start;
+        }
+    
+        @media (min-width : 0px) and (max-width : 468px) {
+            justify-self: flex-start;
+        }
+    }
+    
+    .contenedorindicadores{
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 25%;
+        height: 10%;
+        align-self: flex-end;
+        margin-bottom: 50px;
+    
+        @media (min-width : 769px) and (max-width : 1279px) {
+            margin-bottom: 40px;
+        }
+    
+        @media (max-width : 1200px) {
+            margin-bottom: 35px;
+        }
+    
+        @media (max-width : 1100px) {
+            margin-bottom: 30px;
+        }
+    
+        @media (min-width : 481px) and (max-width : 768px) {
+            margin-bottom: 25px;
+        }
+    
+        @media (max-width : 580px) {
+            margin-bottom: 20px;
+        }
+    
+        @media (min-width : 0px) and (max-width : 468px) {
+            margin-bottom: 15px;
+        }
+    }
+    
+    .indicador{
+        width: 25%;
+        height: 30%;
+        border: 1px solid black;
+        background-color: $colordebordes;
+    }
+    
+    .indicadoractivo{
+        background-color: red;
+    }
+}

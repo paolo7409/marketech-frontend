@@ -1,0 +1,157 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadecategorias"; 
+
+
+/* Contenedor de pagina de categorias */
+
+@include contenedorgeneral($paginadetrabajo,1600px,1400px,1400px,1450px,1400px,1600px,1600px);
+
+/* ------------------------------------------------------- */
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+
+/* Categorias */
+
+.contenedordecategoriasdepagina{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 8fr 0.8fr;
+
+    @media (min-width :769px) and (max-width :1279px) {
+        grid-template-rows: 2fr 8fr 0.8fr;
+    }
+
+    @media (min-width :481px) and (max-width :768px) {
+        grid-template-rows: 2fr 8fr 0.8fr;
+    }
+
+    @media (min-width :0px) and (max-width :480px) {
+        grid-template-rows: 2fr 8fr 0.8fr;
+    }
+}
+
+.contenedordetitulodecategorias{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.titulodecategorias{
+    font-size: 65px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.4em;
+
+    @media (min-width :769px) and (max-width :1279px) {
+        font-size: 60px;
+    }
+
+    @media (min-width :481px) and (max-width :768px) {
+        font-size: 55px;
+    }
+
+    @media (min-width :0px) and (max-width :480px) {
+        font-size: 50px;
+    }
+}
+
+.contenedordeopcionescategorias{
+    grid-column: 1/2;
+    grid-row: 2/span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.categoria{
+    width: 95%;
+    height: 90%;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.tecnologia{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.entretenimiento{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.deporte{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.ropa{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.muebles{
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+
+.autos{
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+
+.libros{
+    grid-column: 1/2;
+    grid-row: 7/span 1;
+}
+
+.descripciondecategoria{
+    margin-left: 1em;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width :769px) and (max-width :1279px) {
+        font-size: 25px;
+    }
+
+    @media (min-width :481px) and (max-width :768px) {
+        font-size: 20px;
+    }
+
+    @media (min-width :0px) and (max-width :480px) {
+        font-size: 15px;
+    }
+}
+
+/* ------------------------------------------------------- */
+
+
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3);
+
+/* ------------------------------------------------------- */

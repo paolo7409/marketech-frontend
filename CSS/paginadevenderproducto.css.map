@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "paginadevenderproducto.scss",
+        "_mixincontenedorgeneral.scss",
+        "_mixinbarradenavegacion.scss",
+        "_mixinpiedepagina.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "paginadevenderproducto.css"
+}

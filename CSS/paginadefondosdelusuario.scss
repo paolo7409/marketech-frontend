@@ -1,0 +1,618 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadefondosdelusuario"; 
+
+
+/* Contenedor de pagina de categorias */
+
+@include contenedorgeneral($paginadetrabajo,1600px,1400px,1300px,2000px,2000px,2000px,2000px);
+
+/* ------------------------------------------------------- */
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+
+/* Fondos del usuario */
+
+.contendordefondosdelusuario{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.5fr 4.2fr;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-rows: 1fr 1.5fr 7fr
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-rows: 1fr 1.5fr 7fr
+    }
+}
+
+.contenedordetitulodefondosdelusuario{
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+    display: flex;
+    align-items: center;
+}
+
+.titulodefondosdelusuario{
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.4em;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 70px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 45px;
+        margin-left: 0.2em;
+    }
+}
+
+.contendordecantidaddefondosdelusuario{
+    grid-column: 1/span 1;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+}
+
+.cantidaddefondosdelusuario{
+    font-size: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.2em;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 150px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 90px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 55px;
+    }
+}
+
+.contenedordeformulariodeagregaciondelosfondosdelusuario{
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1f;
+    justify-items: center;
+    align-items: center;
+}
+
+.formulariodeagregaciondelosfondosdelusuario{
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+    width: 98%;
+    height: 98%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.5fr 0.4fr;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-rows: 1.5fr 5fr 0.4fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-rows: 1.5fr 5fr 0.4fr;
+    }
+}
+
+.contendordeagregaciondefondos{
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        grid-template-columns: 1.7fr 1.5fr 1fr;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+.contendordetitulodeagregarfondo{
+    grid-column: 1/2;
+    grid-row: 1/span 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 2;
+        grid-row: 1/2;
+    }
+}
+
+.titulodeagregarfondo{
+    font-size: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 47px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 47px;
+        margin-left: 0.3em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 35px;
+        margin-left: 0.3em;
+    }
+}
+
+.contendordecantidadqueseagregaraalosfondosdelusuario{
+    grid-column: 2/3;
+    grid-row: 1/span 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        justify-content: flex-end;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 2/span 1;
+        justify-content: center;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 2/span 1;
+        justify-content: center;
+    }
+}
+
+.cantidadqueseagregaraalosfondosdelusuario{
+    width: 80%;
+    height: 28%;
+    border: 2px solid $colordebordes;
+    border-radius: 10px;
+    font-size: 20px;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        width: 90%;
+        height: 30%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        justify-self: center;
+        align-self: flex-start;
+        width: 80%;
+        height: 38%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        align-self: flex-start;
+        width: 98%;
+        height: 45%;
+        font-size: 18px;
+    }
+}
+
+.cantidadqueseagregaraalosfondosdelusuario::placeholder{
+    padding: 0.4em;
+}
+
+.contenedordebotondeagregaciondefondos{
+    grid-column: 3/span 1;
+    grid-row: 1/span 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        justify-content: center;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        justify-content: center;
+        align-items: center;
+        grid-column: 2/span 1;
+        grid-row: 2/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        justify-content: center;
+        grid-column: 2/span 1;
+        grid-row: 2/span 1;
+    }
+}
+
+.botondeagregaciondefondos{
+    width: 20%;
+    height: 30%;
+    font-size: 23px;
+    background-color: $colorsecundariodebotones;
+    border-radius: 10px;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        width: 60%;
+        height: 35%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        align-self: flex-start;
+        width: 50%;
+        height: 43%;
+        font-size: 22px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        align-self: flex-start;
+        width: 85%;
+        height: 45%;
+        font-size: 18px;
+    }
+}
+
+.contendordeinformaciondetarjetadecredito{
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-template-rows: repeat(4,1fr);
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(8,1fr);
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(8,1fr);
+    }
+}
+
+.numerodetarjeta{
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+
+.inputnumerodetarjeta{
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 1/2;
+    }
+}
+
+.caducidad{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+}
+
+.inputcaducidad{
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 2/3;
+    }
+}
+
+.codigocvv2{
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+}
+
+.inputcodigocvv2{
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 3/4;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 3/4;
+    }
+}
+
+.titulardelatarjeta{
+    grid-column: 1/2;
+    grid-row: 4/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+}
+
+.inputtitulardelatarjeta{
+    grid-column: 2/3;
+    grid-row: 4/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 4/5;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 4/5;
+    }
+}
+
+.direccion{
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+}
+
+.inputdireccion{
+    grid-column: 4/span 1;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 5/6;
+    }
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 5/6;
+    }
+}
+
+.ciudad{
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+}
+
+.inputciudad{
+    grid-column: 4/span 1;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 6/7;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 6/7;
+    }
+}
+
+.provincia{
+    grid-column: 3/4;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+}
+
+.inputprovincia{
+    grid-column: 4/span 1;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 7/8;
+    }
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 7/8;
+    }
+}
+
+.empresa{
+    grid-column: 3/4;
+    grid-row: 4/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/2;
+        grid-row: 8/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/2;
+        grid-row: 8/span 1;
+    }
+}
+
+.contendordeopcionesdetarjeta{
+    grid-column: 4/span 1;
+    grid-row: 4/span 1;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 2/span 1;
+        grid-row: 8/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 2/span 1;
+        grid-row: 8/span 1;
+    }
+}
+
+.opciondetarjeta{
+    width: 45%;
+}
+
+.descripciondeinformacionsolicitada{
+    justify-self: flex-start;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2em;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        margin-left: 0.8em;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        margin-left: 1.5em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 20px;
+        margin-left: 0.5em;
+    }
+}
+
+.inputdeformulario{
+    width: 80%;
+    height: 45%;
+    border: 2px solid $colordebordes;
+    border-radius: 10px;
+    font-size: 20px;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        height: 48%;
+        width: 85%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        height: 45%;
+        width: 80%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        height: 45%;
+        width: 92%;
+    }
+}
+
+/* ------------------------------------------------------- */
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3);
+
+/* ------------------------------------------------------- */

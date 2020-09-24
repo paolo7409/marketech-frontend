@@ -1,0 +1,234 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadereclamos";
+
+
+/* Contenedor de pagina de reclamos */
+
+@include contenedorgeneral($paginadetrabajo,1300px,1500px,1350px,1350px,1400px,1500px,1500px);
+
+/* ------------------------------------------------------- */
+
+.contenedordepaginadereclamos{
+    width: 100%;
+    height: 1300px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 80px 1fr 300px;
+
+    @media (min-width : 1101px) and (max-width : 1279px){
+        height: 1500px;
+    }
+
+    @media (min-width : 1031px) and (max-width : 1100px) {
+        height: 1350px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1030px) {
+        height: 1350px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        height: 1400px;
+        grid-template-rows: 80px 1fr 500px;
+    }
+    
+    @media (min-width : 0px) and (max-width : 480px) {
+        height: 1500px;
+        grid-template-rows: 80px 1fr 850px;
+    }
+}
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+.contenedordereclamosdepagina{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1.2fr 1fr 3fr 1fr;
+}
+
+.contenedordetitulodereclamosdepagina{
+    grid-column: 1/span 4;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.titulodereclamos{
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 75px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        font-size: 70px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 50px;
+    }
+}
+
+.contenedordeinformaciondereclamodepagina{
+    grid-column: 1/span 4;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    align-self: center;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedordeinformaciondereclamodereclamador{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.contenedordeinformaciondereclamodereclamado{
+    grid-column: 1/2;
+    grid-row: 2/span 1;
+}
+
+.contenedordeinformaciondereclamo{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    align-items: center;
+}
+
+.contenedordeinformacion{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 70px;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 39px;
+        margin-left: 40px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 28px;
+        margin-left: 20px;
+    }
+}
+
+.inputdeinformacion{
+    justify-self: flex-start;
+    width: 30%;
+    height: 62%;
+    margin-left: 50px;
+    border: 2px solid $colordebordes;
+    border-radius: 8px;
+    font-size: 25px;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        width: 40%;
+        height: 55%;
+        font-size: 23px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        width: 50%;
+        height: 55%;
+        font-size: 20px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        width: 70%;
+        height: 60%;
+        font-size: 18px;
+    }
+
+}
+
+
+.contenedordereclamodepagina{
+    grid-column: 1/span 4;
+    grid-row: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenidodereclamo{
+    width: 90%;
+    height: 90%;
+    font-size: 30px;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    resize: none;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 25px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        font-size: 25px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 20px;
+    }
+}
+
+.contenidodereclamo::placeholder{
+    padding: 10px;
+}
+
+.contendordebotondereclamodepagina{
+    grid-column: 1/span 4;
+    grid-row: 4/span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botondereclamo{
+    font-size: 50px;
+    width: 50%;
+    height: 50%;
+    border: 2px solid $colordebordes;
+    border-radius: 15px;
+    background-color: $colorsecundariodebotones;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 45px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        font-size: 40px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 30px;
+    }
+}
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3);
+
+/* ------------------------------------------------------- */

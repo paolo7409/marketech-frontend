@@ -1,0 +1,321 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "iniciodesesion";
+
+@include contenedorgeneral($paginadetrabajo,1000px,900px,870px,1100px,1200px,1300px,5300px);
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+.contenedordeformulariodeiniciodesesion{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1.5fr 1.7fr 1.5fr;
+    grid-template-rows: 2fr 55fr 2fr ;
+
+    @media (min-width : 1170px) and (max-width : 1279px) {
+        grid-template-columns: 1.5fr 1.8fr 1.5fr;
+        grid-template-rows: 2fr 22fr 2fr ;
+    }
+
+    @media (min-width : 1070px) and (max-width : 1169px) {
+        grid-template-columns: 1.5fr 2fr 1.5fr;
+        grid-template-rows: 2fr 28fr 2fr ;
+    }
+
+    @media (min-width : 916px) and (max-width : 1070px) {
+        grid-template-columns: 1.5fr 2.3fr 1.5fr;
+        grid-template-rows: 2fr 28fr 2fr ;
+    }
+
+    @media (min-width : 769px) and (max-width : 915px) {
+        grid-template-columns: 1.5fr 3fr 1.5fr;
+        grid-template-rows: 2fr 30fr 2fr ;
+    }
+
+    @media (min-width : 681px) and (max-width : 768px) {
+        grid-template-columns: 1.5fr 4.3fr 1.5fr;
+        grid-template-rows: 2fr 30fr 2fr ;
+    }
+
+    @media (min-width : 571px) and (max-width : 680px) {
+        grid-template-columns: 1.5fr 8fr 1.5fr;
+        grid-template-rows: 2fr 30fr 2fr ;
+    }
+
+    @media (min-width : 481px) and (max-width : 570px) {
+        grid-template-columns: 1.5fr 12fr 1.5fr;
+        grid-template-rows: 2fr 20fr 2fr ;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr 40fr 1fr;
+        grid-template-rows: 2fr 10fr 2fr ;
+    }
+}
+
+
+.formulariodeinciodesesion{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border: 2px solid black;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 2fr repeat(3,1fr) 2fr;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-rows: 2fr repeat(3,1fr) 1fr 1fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-rows: 2fr repeat(3,1fr) 1fr 1fr;
+    }
+}
+
+.contenedordetitulodeformulario{
+    grid-column: 2/6;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulodeformulario{
+    text-align: center;
+    font-size: 44px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 1170px) and (max-width : 1279px) {
+        font-size: 38px;
+    }
+
+    @media (min-width : 916px) and (max-width : 1169px) {
+        font-size: 35px;
+    }
+
+    @media (min-width : 681px) and (max-width : 915px) {
+        font-size: 32px;
+    }
+
+    @media (min-width : 571px) and (max-width : 680px) {
+        font-size: 30px;
+    }
+
+    @media (min-width : 431px) and (max-width : 570px) {
+        font-size: 30px;
+    }
+
+    @media (min-width : 0px) and (max-width : 430px) {
+        font-size: 36px;
+    }
+}
+
+.descripciondeinput{
+    margin-left: 30px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+ 
+    @media (min-width : 1170px) and (max-width : 1279px) {
+        margin-left: 20px;
+        font-size: 25px;
+    }
+
+    @media (min-width : 1071px) and (max-width : 1169px) {
+        margin-left: 28px;
+        font-size: 22px;
+    }
+
+    @media (min-width : 916px) and (max-width : 1070px) {
+        margin-left: 20px;
+        font-size: 22px;
+    }
+
+    @media (min-width : 681px) and (max-width : 915px) {
+        margin-left: 18px;
+        font-size: 22px;
+    }
+
+    @media (min-width : 571px) and (max-width : 680px) {
+        margin-left: 12px;
+        font-size: 24px;
+    }
+
+    @media (min-width : 431px) and (max-width : 570px) {
+        margin-left: 18px;
+        font-size: 22px;
+    }
+
+    @media (min-width : 0px) and (max-width : 430px) {
+        margin-left: 10px;
+        font-size: 19px;
+    }
+}
+
+.nombre{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.inputdeformulario{
+    width: 115%;
+    height: 35px;
+    border: 1.5px solid $colordebordes;
+    border-radius: 8px;
+    margin-left: 16px;
+    font-size: 20px;
+
+    @media (min-width : 1071px) and (max-width : 1169px) {
+        height: 32px;
+    }
+
+    @media (min-width : 915px) and (max-width : 1070px) {
+        height: 30px;
+    }
+
+    @media (min-width : 681px) and (max-width : 915px) {
+        height: 30px;
+    }
+
+    @media (min-width : 571px) and (max-width : 680px) {
+        font-size: 19px;
+        margin-left: 25px;
+        height: 30px;
+    }
+
+    @media (min-width : 431px) and (max-width : 570px) {
+        font-size: 17px;
+        margin-left: 20px;
+        height: 30px;
+    }
+
+    @media (min-width : 0px) and (max-width : 430px) {
+        font-size: 15;
+        margin-left: 23px;
+        height: 29px;
+    }
+}
+
+.contenedordeinputnombre{
+    grid-column: 3/span 3;
+    grid-row: 2/3;
+}
+
+
+.correo{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+.contenedordeinputcorreo{
+    grid-column: 3/span 3;
+    grid-row: 3/4;
+}
+
+.contrasena{
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+.contenedordeinputcontrasena{
+    grid-column: 3/span 3;
+    grid-row: 4/5;
+}
+
+.botondeformulario{
+    border: 2px solid $colordebordes;
+    border-radius: 8px;
+    padding: 0.2em;
+    font-size: 30px;
+    background-color: $colorprincipaldebotones;
+
+    @media (min-width : 1071px) and (max-width : 1279px) {
+        font-size: 27px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1070px) {
+        font-size: 26px;
+    }
+
+    @media (min-width : 571px) and (max-width : 768px) {
+        padding: 0.2em;
+        font-size: 28px;
+        width: 90%;
+    }
+
+    @media (min-width : 481px) and (max-width : 570px) {
+        padding: 0.1em;
+        font-size: 28px;
+        width: 90%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        padding: 0.1em;
+        font-size: 24px;
+        width: 75%;
+    }
+}
+
+.contenedordebotondeiniciarsesion{
+    grid-column: 1/span 3;
+    grid-row: 5/span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/span 6;
+        grid-row: 5/span 1;
+    }
+    
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 6;
+        grid-row: 5/span 1;
+    }
+}
+
+.contendordebotondecrearcuenta{
+    grid-column: 4/span 3;
+    grid-row: 5/span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/span 6;
+        grid-row: 6/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 6;
+        grid-row: 6/span 1;
+    }
+}
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3)
+
+/* ------------------------------------------------------- */
