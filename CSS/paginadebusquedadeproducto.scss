@@ -1,0 +1,123 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "mixincartadeproductosbuscado";
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$paginadetrabajo: "paginadebusquedadeproducto";
+
+@include contenedorgeneral(
+  $paginadetrabajo,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  0,
+  false,
+  false
+);
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+// Resultados de busqueda
+
+.contenedordebusquedadeproducto {
+  grid-column: 1 / span 12;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 1fr;
+}
+
+.contenedordetituloresultadosdebusqueda {
+  grid-column: 1 / span 1;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+}
+
+.tituloresultadosdebusqueda {
+  font-size: 55px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0.5em;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 45px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    font-size: 35px;
+  }
+}
+
+.contenedorderesultadosdebusquedadeproducto {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 100px;
+
+  @media (min-width: 1200px) and (max-width: 1279px) {
+    grid-template-columns: 1fr 10fr 1fr;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1200px) {
+    grid-template-columns: 1fr 12fr 1fr;
+  }
+
+  @media (min-width: 769px) and (max-width: 1200px) {
+    grid-template-columns: 1fr 15fr 1fr;
+  }
+
+  @media (min-width: 651px) and (max-width: 768px) {
+    grid-template-columns: 1fr 8fr 1fr;
+  }
+
+  @media (min-width: 481px) and (max-width: 650px) {
+    grid-template-columns: 1fr 12fr 1fr;
+  }
+
+  @media (min-width: 401px) and (max-width: 481px) {
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 400px) {
+    grid-template-columns: 1fr 10fr 1fr;
+  }
+}
+
+.contenedordeproductosbuscados {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 25px;
+}
+
+@include cartadeproductobuscado($paginadetrabajo);
+
+// -----------------------------------------------------------------------------------------
+
+/* Pie de pagina */
+
+@include piedepagina(
+  $paginadetrabajo,
+  3
+); /* ------------------------------------------------------- */

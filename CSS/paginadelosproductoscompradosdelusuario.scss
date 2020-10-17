@@ -1,0 +1,280 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "mixincontenedordeproductos";
+@import "mixincontendordeundeterminadotipodeproductos";
+@import "mixincartadeproductodelusuario";
+@import "mixincartadeproductodelusuarionoeliminable";
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$paginadetrabajo: "paginadeproductoscompradosdelusuario";
+
+@include contenedorgeneral(
+  $paginadetrabajo,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  0,
+  false,
+  false
+);
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+/* Productos comprados del usuario */
+
+.contenedordeproductoscompradosdelusuario {
+  grid-column: 1 / span 12;
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+  grid-template-rows: 250px 1fr 1fr 0.1fr;
+  grid-gap: 0.1%;
+
+  @media (min-width: 1220px) and (max-width: 1320px) {
+    grid-template-columns: 0.3fr repeat(4, 1fr) 0.3fr;
+  }
+
+  @media (min-width: 1001px) and (max-width: 1221px) {
+    grid-template-columns: 0.1fr repeat(4, 1fr) 0.1fr;
+  }
+
+  @media (min-width: 769px) and (max-width: 1000px) {
+    grid-template-columns: 0.05fr repeat(4, 1fr) 0.05fr;
+  }
+
+  @media (min-width: 701px) and (max-width: 768px) {
+    grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+  }
+
+  @media (min-width: 601px) and (max-width: 700px) {
+    grid-template-columns: 0.3fr repeat(4, 1fr) 0.3fr;
+  }
+
+  @media (min-width: 481px) and (max-width: 600px) {
+    grid-template-columns: 0.1fr repeat(4, 1fr) 0.1fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+}
+
+.contenedordetituloproductoscomprados {
+  grid-column: 1 / span 6;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+}
+
+.tituloproductoscomprados {
+  font-size: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0.5em;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 70px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 60px;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    font-size: 50px;
+  }
+}
+
+.contenedordeundeterminadotipodeproducto {
+  grid-column: 2 / span 4;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr repeat(2, 4fr);
+  grid-gap: 25px;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 2 / span 4;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr 4fr 4fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 2/3;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr repeat(4, 1fr);
+  }
+}
+
+#contenedordeproductoscompradosresientementedelusuario {
+  grid-template-rows: 1fr 4fr;
+}
+
+.titulodeundeterminadoconjuntodeproductos {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-self: flex-start;
+  align-self: center;
+
+  @media (min-width: 1081px) and (max-width: 1279px) {
+    font-size: 35px;
+  }
+
+  @media (min-width: 991px) and (max-width: 1080px) {
+    font-size: 33px;
+  }
+
+  @media (min-width: 769px) and (max-width: 990px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 1 / span 2;
+    grid-row: 1/2;
+    justify-self: center;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 1 / span 1;
+    grid-row: 1/2;
+    justify-self: center;
+    font-size: 38px;
+  }
+}
+
+@include cartadeproductodelusuario($paginadetrabajo);
+
+@include cartadeproductodelusuarionoeliminable($paginadetrabajo);
+
+.relleno1 {
+  grid-column: 2/3;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 1 /span 2;
+    grid-row: 1/2;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 1 /span 1;
+    grid-row: 1/2;
+  }
+}
+
+.relleno2 {
+  grid-column: 3/4;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 1 /span 2;
+    grid-row: 1/2;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 1 /span 1;
+    grid-row: 1/2;
+  }
+}
+
+.relleno3 {
+  grid-column: 4 /span 1;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 1 /span 2;
+    grid-row: 1/2;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 1 /span 1;
+    grid-row: 1/2;
+  }
+}
+
+
+.mensajedesinproductoscomprados {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1 / span 4;
+  grid-row: 2/span 2;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 40px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 100%;
+    font-size: 30px;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    font-size: 25px;
+    width: 100%;
+  }
+}
+
+.botondecomprarproducto {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  width: 45%;
+  height: 60%;
+  align-self: flex-end;
+  font-size: 30px;
+  border: 2px solid $colordebordes;
+  background-color: $colorprincipaldebotones;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 18px;
+    width: 50%;
+    height: 50%;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    font-size: 15px;
+    width: 70%;
+    height: 50%;
+  }
+}
+
+/* ------------------------------------------------------- */
+
+/* Pie de pagina */
+
+@include piedepagina(
+  $paginadetrabajo,
+  3
+); /* ------------------------------------------------------- */

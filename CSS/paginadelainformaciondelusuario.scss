@@ -1,0 +1,1117 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadelainformaciondelusuario";
+
+@include contenedorgeneral ($paginadetrabajo,2350px,2350px,2350px,3400px,3400px,3400px,3600px,0,false,false);
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+
+/* Informacion del Usuario */
+
+.contenedordeinformaciondelusuario{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 2fr 2fr 2.5fr 0.1fr;
+    grid-gap: 2%;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-rows: 1fr 4fr 2fr 3fr 2.5fr 0.1fr;
+        grid-gap: 1%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-rows: 1fr 6fr 1.5fr 3fr 2.5fr 0.1fr;  
+        grid-gap: 1%;
+    }
+}
+
+.contenedordetitulodelainformaciondelusuario{
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.titulodelainformaciondelusuario{
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.5em;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 60px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        font-size: 65px;
+        margin-left: 5px;
+        align-self: flex-end;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        align-self: flex-end;
+        font-size: 55px;
+        margin-left: 0;
+        justify-self: center;  
+        align-self: flex-end;
+    }
+}
+
+.contenedordelainformacionprincipaldelusuario{
+    grid-column: 1/span 1;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 4fr;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 4fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 6fr;
+    }
+}
+
+.contenedordetitulodelainformacionprincipaldelusuario{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.contendordebotondemodificarinformacionprincipal{
+    grid-column: 2/span 1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacionprincipaldelusuario{
+    grid-column: 1/span 2;
+    grid-row: 2/span 1;
+    width: 97%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1.5fr;
+    grid-template-rows: repeat(5,1fr);
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        width: 90%;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: repeat(10,1fr);
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(20,1fr);
+    }
+}
+
+.nombre{
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 1/2;
+    }
+}
+
+.nombredelusuario{
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 2/3;
+    }
+}
+
+.apellido{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 3/4;
+    }
+}
+
+.apellidodelusuario{
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 4/5;
+    }
+}
+
+.edad{
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 5/6;
+    }
+}
+
+.edaddelusuario{
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 3/4;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 6/7;
+    }
+}
+
+.correo{
+    grid-column: 1/2;
+    grid-row: 4/5;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 7/8;
+    }
+}
+
+.correodelusuario{
+    grid-column: 2/3;
+    grid-row: 4/5;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 4/5;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 8/9;
+    }
+}
+
+.contrasena{
+    grid-column: 1/2;
+    grid-row: 5/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 9/10;
+    }
+}
+
+.contrasenadelusuario{
+    grid-column: 2/3;
+    grid-row: 5/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 5/6;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 10/11;
+    }
+}
+
+.telefono{
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 11/12;
+    }
+}
+
+.telefonodelusuario{
+    grid-column: 4/span 1;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 6/7;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 12/13;
+    }
+}
+
+.sexo {
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 13/14;
+    }
+}
+
+.sexodelusuario{
+    grid-column: 4/span 1;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 7/8;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 14/15;
+    }
+}
+
+.avatar{
+    grid-column: 3/4;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 8/9;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 15/16;
+    }
+}
+
+.avatardelusuario{
+    grid-column: 4/span 1;
+    grid-row: 3/4;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 8/9;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 16/17;
+    }
+}
+
+.imagenavatardelusuario{
+    width: 15%;
+}
+
+.pais{
+    grid-column: 3/4;
+    grid-row: 4/5;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 9/10;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 17/18;
+    }
+}
+
+.paisdelusuario{
+    grid-column: 4/span 1;
+    grid-row: 4/5;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 9/10;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 18/19;
+    }
+}
+
+.ciudad{
+    grid-column: 3/4;
+    grid-row: 5/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 10/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 19/20;
+    }
+}
+
+.ciudaddelusuario{
+    grid-column: 4/span 1;
+    grid-row: 5/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 10/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 20/span 1;
+    }
+}
+
+.descripciondeinformacion{
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2em;
+
+    @media (min-width : 890px) and (max-width : 1279px) {
+        font-size: 21px;
+        margin-left: 2.3em;
+    }
+
+    @media (min-width : 769px) and (max-width : 889px) {
+        font-size: 21px;
+        margin-left: 1em;
+    }
+
+    @media (min-width : 559px) and (max-width : 768px) {
+        font-size: 27px;
+        margin-left: 30px;
+    }
+
+    @media (min-width : 481px) and (max-width : 558px) {
+        font-size: 27px;
+        margin-left: 0.5em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 27px;
+        margin-left: 1em;
+    }
+}
+
+.informaciondelusuario{
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+    height: 45%;
+    border: 2px solid $colordebordes;
+    border-radius: 8px;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 21px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        font-size: 27px;
+        justify-self: flex-start;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 27px;
+    }
+}
+
+.contenedordeladescripciondelusuario{
+    grid-column: 1/span 1;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2.3fr;
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-columns: 1.7fr 1fr;
+        grid-template-rows: 1fr 4fr;
+    }
+}
+
+.contenedordetitulodeladescripciondelusuario{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.contendordebotondemodificardescripcion{
+    grid-column: 2/span 1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.descripciondelusuario{
+    grid-column: 1/span 2;
+    grid-row: 2/span 1;
+    justify-self: center;
+    align-self: center;
+    width: 97%;
+    height: 100%;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    font-size: 2.3em;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        height: 90%;
+        font-size: 25px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        width: 95%;
+        font-size: 23px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        width: 90%;
+        height: 100%;
+    }
+}
+
+.descripciondelusuario::placeholder{
+    padding-top: 0.2em;
+    padding-left: 0.4em;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        padding-top: 0.3em;
+        padding-left: 0.5em;
+    }
+}
+
+.contenedordelainformacionmonetariadelusuario{
+    grid-column: 1/span 1;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2.2fr;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contenedordetitulodelainformacionmonetariadelusuario{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.contendordebotondemodificarlainformacionmonetaria{
+    grid-column: 2/span 1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacionmonetariodelusuario{
+    grid-column: 1/span 2;
+    grid-row: 2/span 1;
+    width: 97%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 1fr;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
+        width: 75%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
+        width: 90%;
+    }
+}
+
+.contenedordelfondoactualdelusuario{
+    grid-column: 1/2;
+    grid-row: 1/span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.3fr;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/span 1;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 1/2;
+    }
+}
+
+.fondoactual{
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: flex-end;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 28px;
+    }
+}
+
+.fondoactualdelusuario{
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        justify-self: center;
+        font-size: 50px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        justify-self: center;
+        font-size: 50px;
+    }
+}
+
+.contenedordelmediodepagodelusuario{
+    grid-column: 2/3;
+    grid-row: 1/span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.3fr;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/span 1;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 2/3;
+    }
+}
+
+.mediodepago{
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: flex-end;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 28px;
+    }
+}
+
+.mediodepagodelusuario{
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.opciondemediodepago{
+    width: 35%;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        width: 50%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        align-items: flex-end;
+        width: 35%;
+    }
+}
+
+.visa{
+    margin-left: 30px;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        margin-left: 60px;
+    }
+}
+
+.mastercard{
+    margin-right: 30px;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        margin-right: 60px;
+    }
+}
+
+.contenedordelbotondeagregarfondo{
+    grid-column: 3/span 1;
+    grid-row: 1/span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/span 1;
+        grid-row: 3/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 3/span 1
+    }
+}
+
+.botondeagregarfondo{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $colorprincipaldebotones;
+    padding: 0.3em;
+    border: 2px solid $colordebordes;
+    border-radius: 10px;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 26px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 26px;
+    }
+}
+
+.contenedordelainformacionadicionaldelusuario{
+    grid-column: 1/span 1;
+    grid-row: 5/span 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 4fr;
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contenedordetitulodelainformacionadicionaldelusuario{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+}
+
+.contendordebotondemodificarlainformacionadicional{
+    grid-column: 2/span 1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacionadicionaldelusuario{
+    grid-column: 1/span 2;
+    grid-row: 2/span 1;
+    width: 97%;
+    height: 80%;
+    justify-self: center;
+    align-self: center;
+    border: 2px solid $colordebordes;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6,1fr);
+        width: 95%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12,1fr);
+        width: 90%;
+    }
+}
+
+.productoscomprados{
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 1/2;
+    }
+}
+
+.productoscompradosdelusuario{
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 1/2;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 2/3;
+    }
+}
+
+.productosenventa{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 3/4;
+    }
+}
+
+.productosenventadelusuario{
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 2/3;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 4/5;
+    }
+}
+
+.productosvendidos{
+    grid-column: 1/2;
+    grid-row: 3/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 5/6;
+    }
+}
+
+.productosvendidosdelusuario{
+    grid-column: 2/3;
+    grid-row: 3/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 3/4;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 6/7;
+    }
+}
+
+.reclamosalaempresa{
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 7/8;
+    }
+}
+
+.reclamosalaempresadelusuario{
+    grid-column: 4/span 1;
+    grid-row: 1/2;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 4/5;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 8/9;
+    }
+}
+
+.reclamosaunusuario{
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 9/10;
+    }
+}
+
+.reclamosaunusuariodelusuario{
+    grid-column: 4/span 1;
+    grid-row: 2/3;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 5/6;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 10/11;
+    }
+}
+
+.reclamosrecividos{
+    grid-column: 3/4;
+    grid-row: 3/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 1/2;
+        grid-row: 6/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 11/12;
+    }
+}
+
+.reclamosrecividosdelusuario{
+    grid-column: 4/span 1;
+    grid-row: 3/span 1;
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        grid-column: 2/span 1;
+        grid-row: 6/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        grid-column: 1/span 1;
+        grid-row: 12/span 1;
+    }
+}
+
+.descripciondeinformacionadicional{
+    align-self: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2em;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 18px;
+    }
+
+    @media (min-width : 576px) and (max-width : 768px) {
+        margin-left: 2em;
+    }
+
+    @media (min-width : 481px) and (max-width : 575px) {
+        margin-left: 1em;
+        font-size: 18px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        margin-left: 1em;
+        font-size: 18px;
+    }
+}
+
+.informacionadicional{
+    align-self: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 18px;
+    }
+
+    @media (min-width : 576px) and (max-width : 768px) {
+        font-size: 20px;
+    }
+
+    @media (min-width : 481px) and (max-width : 575px) {
+        font-size: 18px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        margin-left: 1em;
+        font-size: 18px;
+    }
+}
+
+.titulodeinformacion{
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 0.7em;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 40px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        margin-left: 0.6em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        font-size: 30px;
+        margin-left: 0.2em;
+    }
+}
+
+.botondemodificacion{
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.3em;
+    background-color: $colorsecundariodebotones;
+    border: 2px solid $colordebordes;
+    border-radius: 10px;
+
+    @media (min-width : 769px) and (max-width : 1279px) {
+        font-size: 20px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+        padding: 0.2em;
+        font-size: 18px;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px) {
+        padding: 0.2em;
+        font-size: 16px;
+        width: 75%;
+    }
+}
+
+/* ------------------------------------------------------- */
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3)
+
+/* ------------------------------------------------------- */

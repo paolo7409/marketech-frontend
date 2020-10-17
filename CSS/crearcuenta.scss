@@ -11,7 +11,7 @@
 
 $paginadetrabajo : "crearcuenta";
 
-@include contenedorgeneral ($paginadetrabajo,1125px,1000px,1000px,1000px,1200px,1300px,900px);
+@include contenedorgeneral ($paginadetrabajo,1125px,1000px,1000px,1000px,1200px,1300px,900px,0,false,false);
 
 
 /* Barra de navegacion */

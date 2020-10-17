@@ -3,12 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
+    <link rel="stylesheet" href="/CSS/paginadevenderproducto.css">
+    <title>Venta de Producto</title>
 </head>
 <body>
-    <div class="contendordepaginadevenderproducto contenedorgeneral" id="contenedorgeneral"></div>
+    
+    <div class="contenedordepaginadevenderproducto contenedorgeneral" id="contenedorgeneral">
+
+        <!--Formulario de Venta de Producto-->
+
+        <div class="contenedordeformulariodevenderproducto">
+            <form class="formulariodevenderproducto" id="formulariodevenderproducto" action="#">
+                <div class="contenedordetitulodevenderproducto">
+                    <div class="titulodevenderproducto">Vender Producto</div>
+                </div>
+                <div class="contenedordeinformaciondecreaciondeproducto">
+                    <div class="nombre descripciondeinput">Nombre</div>
+                    <input class="inputnombre inputdeformulario" id="inputnombre" type="text">
+                    <div class="categoria descripciondeinput">Categoria</div>
+                    <input class="inputcategoria inputdeformulario" id="inputcategoria" type="text">
+                    <div class="precio descripciondeinput">Precio</div>
+                    <input class="inputprecio inputdeformulario" id="inputprecio" type="text">
+                    <div class="empresa descripciondeinput">Empresa</div>
+                    <input class="inputempresa inputdeformulario" id="inputempresa" type="text">
+                    <div class="vendedor descripciondeinput">Vendedor</div>
+                    <input class="inputvendedor inputdeformulario" id="inputvendedor" type="text">
+                    <div class="telefono descripciondeinput">Telefono</div>
+                    <input class="inputtelefono inputdeformulario" id="inputtelefono" type="text">
+                    <div class="cantidad descripciondeinput">Cantidad</div>
+                    <input class="inputcantidad inputdeformulario" id="inputcantidad" type="text">
+                    <div class="oferta descripciondeinput">Oferta</div>
+                    <input class="inputoferta inputdeformulario" id="inputoferta" type="text">
+                    <div class="contenedordeimagendeproducto">
+                        <img class="imagendeproducto" id="imagendeproducto" src="" alt="imagen de producto que sera vendido">
+                    </div>
+                    <input class="inputdeurldelaimagendelproducto" id="inputdeurldelaimagendelproducto" type="text" placeholder="url de la imagen">
+                    <div class="contenedordebotondecrearproducto">
+                        <button class="botondecrearproducto">Crear Producto</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-------------------------------------------------------------------->
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
     <script src="/Javascript/componentebarradenavegacion.js"></script>
     <script src="/Javascript/componentepiedepagina.js"></script>
+    <script src="/Javascript/usuarios.js"></script>
     <script src="/Javascript/paginadevenderproducto.js"></script>
 </body>
 </html>

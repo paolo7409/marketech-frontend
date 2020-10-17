@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
     <link rel="stylesheet" href="/CSS/crearcuenta.css">
-    <title>Document</title>
+    <title>Crear Cuenta</title>
 </head>
-<body>
+<body> 
 
     <div class="contenedordecrearcuenta contenedorgeneral"  id="contenedorgeneral">
 
@@ -47,18 +48,18 @@
                 </div>
                 <div class="sexo descripciondeinput">Sexo</div>
                 <div class="contenedordeinputsexohombre contenedordeinput contenedordeindicadordesexo">
-                    <div class="sexohombre idicadordesexo">Hombre</div>
+                    <div class="sexohombre idicadordesexo" id="sexohombre">Hombre</div>
                     <input class="inputsexohombre inputsexo inputformulario" id="inputsexohombre" autocomplete="off" type="radio" name="sexo" value="hombre">
                 </div>
                 <div class="contenedordeinputsexomujer contenedordeinput contenedordeindicadordesexo">
-                    <div class="sexomujer idicadordesexo">Mujer</div>
+                    <div class="sexomujer idicadordesexo" id="sexomujer">Mujer</div>
                     <input class="inputsexomujer inputsexo inputformulario" id="inputsexomujer" autocomplete="off" type="radio" name="sexo" value="mujer">
                 </div>
                 <div class="contendordebotondecrearcuenta contenedordeboton">
-                    <button class="botondecrearcuenta botondeformulario">Crear Cuenta</button>
+                    <button class="botondecrearcuenta botondeformulario" id="botondecrearcuenta">Crear Cuenta</button>
                 </div>
                 <div class="contenedordebotondeiniciarsesion contenedordeboton">
-                    <button class="botondeiniciarsesion botondeformulario">Iniciar Sesion</button>
+                    <a class="botondeiniciarsesion botondeformulario" id="botondeiniciarsesion" href="iniciodesesion.html">Iniciar Sesion</a>
                 </div>
             </form>
         </div>
@@ -67,6 +68,9 @@
 
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
     <script src="/Javascript/componentebarradenavegacion.js"></script>
     <script src="/Javascript/componentepiedepagina.js"></script>
     <script src="/Javascript/crearcuenta.js"></script>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
     <link rel="stylesheet" href="/CSS/iniciodesesion.css">
-    <title>Document</title>
+    <title>Inicio de Sesion</title>
 </head>
 <body>
 
@@ -20,13 +21,23 @@
             <form action="#" class="formulariodeinciodesesion" id="formulariodeinciodesesion">
                 <div class="contenedordetitulodeformulario"><div class="titulodeformulario" >Inicio de Sesion</div></div>
                 <div class="nombre descripciondeinput">Nombre</div>
-                <div class="contenedordeinputnombre contenedordeinput"><input class="inputnombre inputdeformulario" type="text"></div>
+                <div class="contenedordeinputnombre contenedordeinput">
+                    <input class="inputnombre inputdeformulario" id="inputnombre" type="text" autocomplete="off">
+                </div>
                 <div class="correo descripciondeinput">Correo</div>
-                <div class="contenedordeinputcorreo contenedordeinput"><input class="inputcorreo inputdeformulario" type="text"></div>
+                <div class="contenedordeinputcorreo contenedordeinput">
+                    <input class="inputcorreo inputdeformulario" id="inputcorreo" type="text" autocomplete="off">
+                </div>
                 <div class="contrasena descripciondeinput">Contrasena</div>
-                <div class="contenedordeinputcontrasena contenedordeinput"><input class="inputcontrasena inputdeformulario" type="text"></div>
-                <div class="contenedordebotondeiniciarsesion"><button class="botondeiniciarsesion botondeformulario">Iniciar Sesion</button></div>
-                <div class="contendordebotondecrearcuenta"><button class="botondecrearcuenta botondeformulario">Crear Cuenta</button></div>
+                <div class="contenedordeinputcontrasena contenedordeinput">
+                    <input class="inputcontrasena inputdeformulario" id="inputcontrasena" type="text" autocomplete="off">
+                </div>
+                <div class="contenedordebotondeiniciarsesion">
+                    <button class="botondeiniciarsesion botondeformulario" id="botondeiniciarsesion">Iniciar Sesion</button>
+                </div>
+                <div class="contendordebotondecrearcuenta">
+                    <a class="botondecrearcuenta botondeformulario" id="botondecrearcuenta" href="crearcuenta.html">Crear Cuenta</a>
+                </div>
             </form>
         </div>
 
@@ -36,8 +47,12 @@
 
         <!------------------------------------------------------------------>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
     <script src="/Javascript/componentebarradenavegacion.js"></script>
     <script src="/Javascript/componentepiedepagina.js"></script>
     <script src="/Javascript/iniciodesesion.js"></script>
+    <script src="/Javascript/usuarios.js"></script>
 </body>
 </html>

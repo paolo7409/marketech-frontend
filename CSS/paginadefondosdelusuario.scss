@@ -14,7 +14,7 @@ $paginadetrabajo : "paginadefondosdelusuario";
 
 /* Contenedor de pagina de categorias */
 
-@include contenedorgeneral($paginadetrabajo,1600px,1400px,1300px,2000px,2000px,2000px,2000px);
+@include contenedorgeneral($paginadetrabajo,1600px,1400px,1300px,2000px,2000px,2000px,2000px,false,false);
 
 /* ------------------------------------------------------- */
 

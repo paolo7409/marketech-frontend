@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
     <link rel="stylesheet" href="/CSS/paginadefondosdelusuario.css">
-    <title>Document</title>
+    <title>Fondos del Usuario</title>
 </head>
 <body>
     <div class="contenedordepaginadefondosdelusuario contenedorgeneral" id="contenedorgeneral">
@@ -16,16 +17,16 @@
                 <div class="titulodefondosdelusuario">Fondo actual</div>
             </div>
             <div class="contendordecantidaddefondosdelusuario">
-                <div class="cantidaddefondosdelusuario">$ 1000000</div>
+                <div class="cantidaddefondosdelusuario" id="cantidaddefondosdelusuario">$ 1000000</div>
             </div>
             <div class="contenedordeformulariodeagregaciondelosfondosdelusuario">
-                <form class="formulariodeagregaciondelosfondosdelusuario" action="#">
+                <form class="formulariodeagregaciondelosfondosdelusuario" id="formulariodeagregaciondelosfondosdelusuario" action="#">
                     <div class="contendordeagregaciondefondos">
                         <div class="contendordetitulodeagregarfondo">
                             <div class="titulodeagregarfondo">Agregar fondo</div>
                         </div>
                         <div class="contendordecantidadqueseagregaraalosfondosdelusuario">
-                            <input class="cantidadqueseagregaraalosfondosdelusuario" placeholder="cantidad" type="text">
+                            <input class="cantidadqueseagregaraalosfondosdelusuario" id="cantidadqueseagregaraalosfondosdelusuario" placeholder="cantidad" type="text">
                         </div>
                         <div class="contenedordebotondeagregaciondefondos">
                             <button class="botondeagregaciondefondos">Agregar</button>
@@ -33,23 +34,23 @@
                     </div>
                     <div class="contendordeinformaciondetarjetadecredito">
                         <div class="numerodetarjeta descripciondeinformacionsolicitada">Nro de Tarjeta</div>
-                        <input class="inputnumerodetarjeta inputdeformulario" type="text">
+                        <input class="inputnumerodetarjeta inputdeformulario" id="inputnumerodetarjeta" type="text">
                         <div class="caducidad descripciondeinformacionsolicitada">Caducidad</div>
-                        <input class="inputcaducidad inputdeformulario" type="text">
+                        <input class="inputcaducidad inputdeformulario" id="inputcaducidad" type="date">
                         <div class="codigocvv2 descripciondeinformacionsolicitada">Codigo CVV2</div>
-                        <input class="inputcodigocvv2 inputdeformulario" type="text">
+                        <input class="inputcodigocvv2 inputdeformulario" id="inputcodigocvv2" type="text">
                         <div class="titulardelatarjeta descripciondeinformacionsolicitada">Titular de la Tarjeta</div>
-                        <input class="inputtitulardelatarjeta inputdeformulario" type="text">
+                        <input class="inputtitulardelatarjeta inputdeformulario" id="inputtitulardelatarjeta" type="text">
                         <div class="direccion descripciondeinformacionsolicitada">Direccion</div>
-                        <input class="inputdireccion inputdeformulario" type="text">
+                        <input class="inputdireccion inputdeformulario" id="inputdireccion" type="text">
                         <div class="ciudad descripciondeinformacionsolicitada">Ciudad</div>
-                        <input class="inputciudad inputdeformulario" type="text">
+                        <input class="inputciudad inputdeformulario" id="inputciudad" type="text">
                         <div class="provincia descripciondeinformacionsolicitada">Provincia</div>
-                        <input class="inputprovincia inputdeformulario" type="text">
+                        <input class="inputprovincia inputdeformulario" id="inputprovincia" type="text">
                         <div class="empresa descripciondeinformacionsolicitada">Empresa</div>
                         <div class="contendordeopcionesdetarjeta">
-                            <img class="visa opciondetarjeta" src="https://i.pinimg.com/originals/07/73/4c/07734cf160091516ce46a0e71b9f1cab.jpg" alt="visa">
-                            <img class="mastercard opciondetarjeta" src="https://www.888casino.es/blog/sites/newblog.888casino.es/files/2019-06/hfghfghjgfhfg.png" alt="mastercard">
+                            <img class="visa opciondetarjeta" id="visa" src="https://i.pinimg.com/originals/07/73/4c/07734cf160091516ce46a0e71b9f1cab.jpg" alt="visa">
+                            <img class="mastercard opciondetarjeta" id="mastercard" src="https://www.888casino.es/blog/sites/newblog.888casino.es/files/2019-06/hfghfghjgfhfg.png" alt="mastercard">
                         </div>
                     </div>
                 </form>
@@ -59,9 +60,12 @@
         <!----------------------------------------------->
 
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
     <script src="/Javascript/componentebarradenavegacion.js"></script>
     <script src="/Javascript/componentepiedepagina.js"></script>
+    <script src="/Javascript/usuarios.js"></script>
     <script src="/Javascript/paginadefondosdelusuario.js"></script>
 </body>
 </html>

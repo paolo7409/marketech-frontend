@@ -14,7 +14,7 @@ $paginadetrabajo : "paginadecategorias";
 
 /* Contenedor de pagina de categorias */
 
-@include contenedorgeneral($paginadetrabajo,1600px,1400px,1400px,1450px,1400px,1600px,1600px);
+@include contenedorgeneral($paginadetrabajo,1600px,1400px,1400px,1450px,1400px,1600px,1600px,0,false,false);
 
 /* ------------------------------------------------------- */
 

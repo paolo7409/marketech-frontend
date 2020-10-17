@@ -1,0 +1,412 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "mixincontenedordeproductos";
+@import "mixincontendordeundeterminadotipodeproductos";
+@import "mixincartadeproducto";
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$paginadetrabajo: "paginadebusquedadeusuario";
+
+@include contenedorgeneral(
+  $paginadetrabajo,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  max-content,
+  0,
+  false,
+  false
+);
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+/* Informacion de usuario buscado */
+
+.contenedordelabusquedadeusuario {
+  grid-column: 1 / span 12;
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+  grid-template-rows: 600px repeat(2, 1fr) 0.1fr;
+  grid-gap: 0.1%;
+
+  @media (min-width: 1220px) and (max-width: 1320px) {
+    grid-template-columns: 0.3fr repeat(4, 1fr) 0.3fr;
+  }
+
+  @media (min-width: 1001px) and (max-width: 1221px) {
+    grid-template-columns: 0.1fr repeat(4, 1fr) 0.1fr;
+  }
+
+  @media (min-width: 769px) and (max-width: 1000px) {
+    grid-template-columns: 0.05fr repeat(4, 1fr) 0.05fr;
+  }
+
+  @media (min-width: 701px) and (max-width: 768px) {
+    grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+  }
+
+  @media (min-width: 601px) and (max-width: 700px) {
+    grid-template-columns: 0.3fr repeat(4, 1fr) 0.3fr;
+  }
+
+  @media (min-width: 481px) and (max-width: 600px) {
+    grid-template-columns: 0.1fr repeat(4, 1fr) 0.1fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+}
+
+.informaciondelusuariobuscado {
+  grid-column: 1 / span 6;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 0.5fr 2.5fr 2fr;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    grid-template-rows: 0.3fr 2.5fr 2fr;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-template-rows: 0.3fr 2.5fr 2fr;
+    grid-template-columns: 6fr 1fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-template-rows: 0.3fr 2.5fr 2fr;
+    grid-template-columns: 6fr 1fr;
+  }
+}
+
+.contenedordeinformacionprincipaldelusuairo {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-rows: 2fr repeat(2, 1fr);
+  grid-row-gap: 5%;
+  align-items: center;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr repeat(4,1fr);
+    grid-row-gap: 10px;
+  }
+}
+
+.avatardelusuario {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  width: 55%;
+  height: 50%;
+
+  @media (min-width: 1040px) and (max-width: 1279px) {
+    width: 60%;
+    height: 50%;
+  }
+
+  @media (min-width: 891px) and (max-width: 1041px) {
+    width: 75%;
+    height: 50%;
+  }
+
+  @media (min-width: 769px) and (max-width: 890px) {
+    width: 80%;
+    height: 45%;
+  }
+
+  @media (min-width: 551px) and (max-width: 768px) {
+    width: 60%;
+    height: 90%;
+  }
+
+  @media (min-width: 481px) and (max-width: 550px) {
+    width: 70%;
+    height: 90%;
+  }
+
+  @media (min-width: 381px) and (max-width: 480px) {
+    width: 80%;
+    height: 45%;
+  }
+
+  @media (min-width: 0px) and (max-width: 380px) {
+    width: 100%;
+    height: 45%;
+  }
+}
+
+.nombredelusuario {
+  grid-column: 2 / span 1;
+  grid-row: 1/2;
+  font-size: 65px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    font-size: 55px;
+  }
+
+  @media (min-width: 551px) and (max-width: 768px) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 481px) and (max-width: 550px) {
+    font-size: 45px;
+  }
+
+  @media (min-width: 381px) and (max-width: 480px) {
+    margin-left: 20px;
+    font-size: 40px;
+  }
+
+  @media (min-width: 0px) and (max-width: 380px) {
+    margin-left: 20px;
+    font-size: 35px;
+  }
+}
+
+.email {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  align-self: flex-end;
+}
+
+.emaildelusuario {
+  grid-column: 2 / span 1;
+  grid-row: 2/3;
+  align-self: flex-end;
+
+  @media (min-width: 0px) and (max-width: 768px) {
+    grid-column: 1 / span 2;
+    grid-row: 3/4;
+  }
+}
+
+.telefono {
+  grid-column: 1/2;
+  grid-row: 3 / span 1;
+
+  @media (min-width: 0px) and (max-width: 768px) {
+    grid-column: 1 / span 2;
+    grid-row: 4/5;
+  }
+}
+
+.telefonodelusuario {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+
+  @media (min-width: 0px) and (max-width: 768px) {
+    grid-column: 1 / span 2;
+    grid-row: 5/6;
+  }
+}
+
+.descripciondeinformacion {
+  font-size: 37px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 80px;
+
+  @media (min-width: 1041px) and (max-width: 1279px) {
+    margin-left: 47px;
+    font-size: 30px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1040px) {
+    margin-left: 18px;
+    font-size: 30px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin-left: 18px;
+    font-size: 28px;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+.informaciondelusuario {
+  font-size: 37px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  @media (min-width: 1041px) and (max-width: 1279px) {
+    justify-self: flex-start;
+    font-size: 30px;
+  }
+
+  @media (min-width: 769px) and (max-width: 1040px) {
+    font-size: 30px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin-left: 20px;
+    font-size: 28px;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+.contenedordescripciondelusuario {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2.2fr;
+}
+
+.titulodedescripcion {
+  grid-column: 1 / span 1;
+  grid-row: 1/2;
+  align-self: center;
+  margin-left: 75px;
+  font-size: 37px;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  @media (min-width: 841px) and (max-width: 1279px) {
+    margin-left: 47px;
+    font-size: 30px;
+  }
+
+  @media (min-width: 769px) and (max-width: 840px) {
+    margin-left: 25px;
+    font-size: 30px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin-left: 18px;
+    font-size: 28px;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+.descripciondelusuario {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  width: 90%;
+  height: 100%;
+  align-self: center;
+  justify-self: center;
+  resize: none;
+  border: 2px solid $colordebordes;
+  border-radius: 10px;
+  font-size: 1.5em;
+  padding: 8px;
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    width: 90%;
+    height: 88%;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 85%;
+    height: 80%;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    width: 85%;
+    height: 80%;
+  }
+}
+
+.contenedordeundeterminadotipodeproducto {
+  grid-column: 2 / span 4;
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr repeat(2, 4fr);
+  grid-gap: 25px;
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 2 / span 4;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr 4fr 4fr;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 2/3;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr repeat(4, 1fr);
+  }
+}
+
+.titulodeundeterminadoconjuntodeproductos {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-self: flex-start;
+  align-self: center;
+
+  @media (min-width: 1081px) and (max-width: 1279px) {
+    font-size: 35px;
+  }
+
+  @media (min-width: 991px) and (max-width: 1080px) {
+    font-size: 33px;
+  }
+
+  @media (min-width: 769px) and (max-width: 990px) {
+    font-size: 28px;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-column: 1 / span 2;
+    grid-row: 1/2;
+    justify-self: center;
+  }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    grid-column: 1 / span 1;
+    grid-row: 1/2;
+    justify-self: center;
+    font-size: 38px;
+  }
+}
+
+@include cartadeproducto($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+/* Pie de pagina */
+
+@include piedepagina(
+  $paginadetrabajo,
+  3
+); /* ------------------------------------------------------- */

@@ -15,7 +15,7 @@ class CarruseldeProductos {
 
         let carruseldeproductos = `
         <div class="contenedordecarrusel" id="contenedordecarrusel">
-            <div class="contenedordeimagendefecha flechaizquierda" id="flechaizquierda"><img class="imagendefecha imagendefechaderecha" src="https://www.flaticon.com/svg/static/icons/svg/271/271220.svg" alt="imagendeflechaizquierda flechaderecha"></div>
+            <div class="contenedordeimagendefecha flechaizquierda" id="flechaizquierda"><img class="imagendefecha imagendefechaderecha" src="https://www.flaticon.com/svg/static/icons/svg/271/271220.svg" alt=""></div>
             <div class="contenedordeimagenesdecarrusel" id="contenedordeimagenesdecarrusel">
                 <div class="contenedordeimagendecarrusel" id="contenedordeimagendecarrusel">
                     <a href="${this.rutadeimagendeproductodecarrusel1}">
@@ -33,7 +33,7 @@ class CarruseldeProductos {
                     </a>
                 </div>
             </div>
-            <div class="contenedordeimagendefecha flechaderecha" id="flechaderecha"><img class="imagendefecha imagendeflechaizquierda" src="https://www.flaticon.com/svg/static/icons/svg/271/271228.svg" alt="imagendeflechaderecha"></div>
+            <div class="contenedordeimagendefecha flechaderecha" id="flechaderecha"><img class="imagendefecha imagendeflechaizquierda" src="https://www.flaticon.com/svg/static/icons/svg/271/271228.svg" alt=""></div>
             <div class="contenedorindicadores">
                 <div class="indicador" id="indicador1"></div>
                 <div class="indicador" id="indicador2"></div>

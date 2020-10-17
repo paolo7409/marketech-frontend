@@ -11,7 +11,7 @@
 
 $paginadetrabajo : "paginadeopcionesdelusuario";
 
-@include contenedorgeneral($paginadetrabajo,1600px,1500px,1650px,1650px,1900px,2000px,1500px);
+@include contenedorgeneral($paginadetrabajo,1600px,1500px,1650px,1650px,1900px,2000px,1500px,0,false,false);
 
 /* Barra de navegacion */
 

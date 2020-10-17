@@ -2,3 +2,478 @@
 @import "mixinbarradenavegacion";
 @import "mixinpiedepagina";
 @import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadevenderproducto";
+
+/* Contenedor de pagina de reclamos */
+
+@include contenedorgeneral($paginadetrabajo,1600px,1300px,1300px,2000px,2000px,2000px,2200px,0,false,false);
+
+/* ------------------------------------------------------- */
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+
+
+/* Formulario de Venta de Producto */
+
+.contenedordeformulariodevenderproducto{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        grid-template-columns: 1fr 20fr 1fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 768px){
+        grid-template-columns: 1fr 20fr 1fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1fr 50fr 1fr;
+        grid-template-rows: 0.5fr 10fr 1fr;
+    }
+}
+
+.formulariodevenderproducto{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 7fr;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-rows: 1fr 7.5fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-rows: 1fr 10fr;
+    }
+}
+
+.contenedordetitulodevenderproducto{
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.titulodevenderproducto{
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        font-size: 65px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 48px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        text-align: center;
+        font-size: 35px;
+    }
+}
+
+.contenedordeinformaciondecreaciondeproducto{
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    border: 2px solid $colordebordes;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 3fr;
+    grid-template-rows: 0.5fr repeat(8,1fr) 2.5fr;
+    justify-items: center;
+    align-items: center;
+
+    @media (min-width : 769px) and (max-width : 970px){
+        grid-template-columns: 1fr 1.8fr 3fr;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 0.5fr repeat(8,1fr) 5.5fr 1fr 2fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr repeat(16,1fr) 5fr 1fr 2.5fr;
+    }
+}
+
+.nombre{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 2/3;
+    }
+}
+
+.inputnombre{
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 3/4;
+    }
+}
+
+.categoria{
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 4/5;
+    }
+}
+
+.inputcategoria{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 5/6;
+    }
+}
+
+.precio{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 6/7;
+    }
+}
+
+.inputprecio{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 7/8;
+    }
+}
+
+.empresa{
+    grid-column: 1/2;
+    grid-row: 5/6;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 8/9;
+    }
+}
+
+.inputempresa{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 9/10;
+    }
+}
+
+.vendedor{
+    grid-column: 1/2;
+    grid-row: 6/7;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 10/11;
+    }
+}
+
+.inputvendedor{
+    grid-column: 2/3;
+    grid-row: 6/7;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 11/12;
+    }
+}
+
+.telefono{
+    grid-column: 1/2;
+    grid-row: 7/8;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 12/13;
+    }
+}
+
+.inputtelefono{
+    grid-column: 2/3;
+    grid-row: 7/8;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 13/14;
+    }
+}
+
+.cantidad{
+    grid-column: 1/2;
+    grid-row: 8/9;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 14/15;
+    }
+}
+
+.inputcantidad{
+    grid-column: 2/3;
+    grid-row: 8/9;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 15/16;
+    }
+}
+
+.oferta{
+    grid-column: 1/2;
+    grid-row: 9/10;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 16/17;
+    }
+}
+
+.inputoferta{
+    grid-column: 2/3;
+    grid-row: 9/10;
+    
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 17/18;
+    }
+}
+
+.descripciondeinput{
+    justify-self: flex-start;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 1.5em;
+
+    @media (min-width : 971px) and (max-width : 1279px){
+        font-size: 22px;
+        margin-left: 1em;
+    }
+
+    @media (min-width : 769px) and (max-width : 970px){
+        font-size: 22px;
+        margin-left: 0.5em;
+    }
+
+    @media (min-width : 656px) and (max-width : 768px){
+        font-size: 25px;
+        margin-left: 3em;
+    }
+
+    @media (min-width : 481px) and (max-width : 655px){
+        margin-left: 1em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 25px;
+        margin-left: 0.6em;
+    }
+}
+
+.inputdeformulario{
+    width: 90%;
+    height: 48%;
+    border: 2px solid $colordebordes;
+    border-radius: 8px;
+    font-size: 22px;
+
+    @media (min-width : 1201px) and (max-width : 1279px){
+        width: 90%;
+        height: 48%;
+    }
+
+    @media (min-width : 769px) and (max-width : 1200px){
+        width: 100%;
+        height: 55%;
+        font-size: 18px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        width: 90%;
+        height: 60%;
+        font-size: 18px;
+        justify-self: flex-start;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        width: 90%;
+        height: 90%;
+        font-size: 22px;
+    }
+}
+
+.contenedordeimagendeproducto{
+    grid-column: 3/span 1;
+    grid-row: 2/9;
+    width: 85%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    border: 2px solid $colordebordes;
+    margin-top: 5%;
+
+    @media (min-width : 921px) and (max-width : 1201px){
+        margin-top: 1%;
+        width: 78%;
+    }
+
+    @media (min-width : 769px) and (max-width : 920px){
+        width: 85%;
+        height: 75%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 10/11;
+        width: 65%;
+        height: 95%;
+        align-self: flex-end;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 18/19;
+        width: 65%;
+        height: 95%;
+        align-self: flex-end;
+    }
+}
+
+
+.imagendeproducto{
+    width: 100%;
+    height: 100%;
+}
+
+.inputdeurldelaimagendelproducto{
+    grid-column: 3/span 1;
+    grid-row: 8/10;
+    width: 70%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $colordebordes;
+    border-radius: 8px;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 11/12;
+        align-self: flex-end;
+        width: 65%;
+        height: 70%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 2;
+        grid-row: 19/20;
+        align-self: flex-end;
+        width: 65%;
+        height: 80%;
+    }
+}
+
+.inputdeurldelaimagendelproducto::placeholder{
+    padding: 3%;
+    font-size: 18px;
+}
+
+
+.contenedordebotondecrearproducto{
+    grid-column: 1/span 3;
+    grid-row: 10/span 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 12/span 1
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 20/21;
+    }
+}
+
+.botondecrearproducto{
+    width: 60%;
+    height: 40%;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $colorprincipaldebotones;
+    border: 2px solid $colordebordes;
+    border-radius: 15px;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        width: 50%;
+        height: 35%;
+        font-size: 30px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        width: 50%;
+        height: 50%;
+        font-size: 26px
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        width: 80%;
+        height: 50%;
+        font-size: 25px
+    }
+}
+
+
+/* ------------------------------------------------------- */
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3);
+
+/* ------------------------------------------------------- */

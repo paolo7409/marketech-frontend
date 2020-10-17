@@ -1,0 +1,210 @@
+@mixin cartadeproductobuscado($paginadetrabajo) {
+  .contenedordeproducto {
+    width: 100%;
+    height: 100%;
+    border: 2px solid $colordebordes;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      grid-template-columns: 1.8fr 4fr;
+    }
+
+    @media (min-width: 0px) and (max-width: 480px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 6.5fr 4.5fr;
+    }
+  }
+
+  .contenedordeimagendeproducto {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 1;
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid $colordebordes;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 0px) and (max-width: 480px) {
+      grid-column: 1/span 1;
+      grid-row: 1/2;
+      border-bottom: 2px solid $colordebordes;
+      border-right: 0;
+    }
+  }
+
+  .imagendeproducto {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    @media (min-width: 0px) and (max-width: 480px) {
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+
+  .informaciondeproducto {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: flex-start;
+    align-items: center;
+
+    @media (min-width: 0px) and (max-width: 480px) {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+      justify-items: center;
+    }
+  }
+
+  .nombredeproducto {
+    grid-column: 1 / span 1;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    color: $colordebordes;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width: 1081px) and (max-width: 1279px) {
+      font-size: 18px;
+    }
+
+    @media (min-width: 991px) and (max-width: 1080px) {
+      font-size: 18px;
+    }
+
+    @media (min-width: 769px) and (max-width: 990px) {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 701px) and (max-width: 768px) {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 601px) and (max-width: 700px) {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 481px) and (max-width: 600px) {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 0px) and (max-width: 468px) {
+      font-size: 22px;
+      margin-left: 0px;
+      justify-content: center;
+    }
+  }
+  .preciodeproducto {
+    grid-column: 1 / span 1;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    color: $colordebordes;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    @media (min-width: 1081px) and (max-width: 1279px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: 991px) and (max-width: 1080px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: 769px) and (max-width: 990px) {
+      font-size: 40px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 701px) and (max-width: 768px) {
+      font-size: 40px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 601px) and (max-width: 700px) {
+      font-size: 40px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 481px) and (max-width: 600px) {
+      font-size: 27px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 0px) and (max-width: 468px) {
+      font-size: 45px;
+      margin-left: 0px;
+      justify-content: center;
+    }
+  }
+  .ofertadeproducto {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $colordedescuentodeunproducto;
+    text-align: center;
+
+    @media (min-width: 1081px) and (max-width: 1279px) {
+      font-size: 19px;
+    }
+
+    @media (min-width: 991px) and (max-width: 1080px) {
+      font-size: 19px;
+    }
+
+    @media (min-width: 769px) and (max-width: 990px) {
+      font-size: 19px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 701px) and (max-width: 768px) {
+      font-size: 20px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 601px) and (max-width: 700px) {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 481px) and (max-width: 600px) {
+      font-size: 18px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: 0px) and (max-width: 468px) {
+      font-size: 20px;
+      margin-left: 0px;
+      justify-content: center;
+    }
+  }
+}

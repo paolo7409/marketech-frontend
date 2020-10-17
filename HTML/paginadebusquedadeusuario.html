@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
+    <link rel="stylesheet" href="/CSS/paginadebusquedadeusuario.css">
+    <title>Busqueda de Usuario</title>
+</head>
+<body>
+    <div class="contenedordepaginadebusquedadeusuario contenedorgeneral" id="contenedorgeneral">\
+
+        <div class="contenedordelabusquedadeusuario" id="contenedordelabusquedadeusuario">
+            <div class="informaciondelusuariobuscado">
+                <div class="contenedordeinformacionprincipaldelusuairo">
+                    <img class="avatardelusuario" id="avatardelusuario" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSmKX2IWZRxT4TH2Yz-WDq1hWasW9NorOgMrQ&usqp=CAU" alt="avatardelusuario">
+                    <div class="nombredelusuario" id="nombredelusuario">Usuario</div>
+                    <div class="email descripciondeinformacion">Email :</div>
+                    <div class="emaildelusuario informaciondelusuario" id="emaildelusuario">Email</div>
+                    <div class="telefono descripciondeinformacion">Telefono :</div>
+                    <div class="telefonodelusuario informaciondelusuario" id="telefonodelusuario">Telefono</div>
+                </div>
+                <div class="contenedordescripciondelusuario">
+                    <div class="titulodedescripcion">Descripcion :</div>
+                    <textarea class="descripciondelusuario" id="descripciondelusuario"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="/Javascript/componentebarradenavegacion.js"></script>
+    <script src="/Javascript/componentecontenedordeproductos.js"></script>
+    <script src="/Javascript/componentecartadeproducto.js"></script>
+    <script src="/Javascript//componentepiedepagina.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
+    <script src="/Javascript/usuarios.js"></script>
+    <script src="/Javascript/productos.js"></script>
+    <script src="/Javascript/paginadebusquedadeusuario.js"></script>
+</body>
+</html>

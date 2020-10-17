@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
     <link rel="stylesheet" href="/CSS/paginadereclamos.css">
-    <title>Document</title>
+    <title>Reclamos</title>
 </head>
 <body>
     <div class="contenedordepaginadereclamos contenedorgeneral" id="contenedorgeneral" >
@@ -16,24 +17,29 @@
             <div class="contenedordeinformaciondereclamodepagina">
                 <div class="contenedordeinformaciondereclamodereclamador contenedordeinformaciondereclamo">
                     <div class="contendordereclamdor contenedordeinformacion">De</div>
-                    <input class="inputdereclamador inputdeinformacion" type="text">
+                    <input class="inputdereclamador inputdeinformacion" id="inputdereclamador" type="text">
                 </div>
                 <div class="contenedordeinformaciondereclamodereclamado contenedordeinformaciondereclamo">
                     <div class="contendordereclamado contenedordeinformacion">Para</div>
-                    <input class="inputdereclamado inputdeinformacion" type="text">
+                    <input class="inputdereclamado inputdeinformacion" id="inputdereclamado" type="text">
                 </div>
             </div>
             <div class="contenedordereclamodepagina">
-                <textarea class="contenidodereclamo" placeholder="ingrese su reclamo"></textarea>
+                <textarea class="contenidodereclamo" id="contenidodereclamo" placeholder="ingrese su reclamo"></textarea>
             </div>
             <div class="contendordebotondereclamodepagina">
-                <button class="botondereclamo"><a href="#">Reclamar</a></button>
+                <button class="botondereclamo" id="botondereclamo"><a href="#">Reclamar</a></button>
             </div>
         </div>
 
     </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
     <script src="/Javascript/componentebarradenavegacion.js"></script>
     <script src="/Javascript/componentepiedepagina.js"></script>
+    <script src="/Javascript/usuarios.js"></script>
     <script src="/Javascript/paginadereclamos.js"></script>
 </body>
 </html>

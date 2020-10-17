@@ -1,0 +1,668 @@
+@import "mixincontenedorgeneral";
+@import "mixinbarradenavegacion";
+@import "mixinpiedepagina";
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$paginadetrabajo : "paginadecomprarproducto";
+
+/* Contenedor de pagina de categorias */
+
+@include contenedorgeneral($paginadetrabajo,1800px,1800px,1800px,1800px,1800px,1800px,1400px,0,false,false);
+
+/* ------------------------------------------------------- */
+
+
+/* Barra de navegacion */
+
+@include barradenavegacion($paginadetrabajo);
+
+/* ------------------------------------------------------- */
+
+
+
+.contendordeinformaciondecomprarproducto{
+    grid-column: 1/span 12;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
+
+    @media (min-width : 769px) and (max-width : 1279px){
+        grid-template-columns: 1fr 25fr 1fr;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1fr 15fr 1fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1fr 25fr 1fr;
+        grid-template-rows: 0.5fr 10fr 1fr;
+    }
+}
+
+.informaciondecomprarproducto{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2.2fr;
+    grid-row-gap: 8%;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-rows: 1fr 3fr;
+        grid-row-gap: 6%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-rows: 1fr 5fr;
+        grid-row-gap: 4%;
+    }
+}
+
+.informaciondelacompradelusuario{
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.contendordetitulodecomprarproducto{
+    align-self: flex-start;
+    grid-column: 1/span 1;
+    grid-row: 1/2;
+}
+
+.titulodecomprarproducto{
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size:70px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 55px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 50px;
+        text-align: center;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 40px;
+        text-align: center;
+    }
+}
+
+.informaciondecompradelusuario{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.contenedordelosfondosdelusuario{
+    grid-column: 1/span 1;
+    grid-row: 2/3;
+    align-items: center;
+    grid-template-columns: 1fr 5fr;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1fr 2fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1.2fr 2fr;
+    }
+}
+
+.fondo{
+    grid-column: 1/2;
+    grid-row: 1/span 1;
+    font-size: 42px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size: 40px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 28px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 34px;
+        margin-left: 0.2em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 21px;
+        margin-left: 0.2em;
+    }
+}
+
+.fondodelusuario{
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+    font-size: 68px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size:65px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 60px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 55px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 30px;
+    }
+}
+
+.contendordeelmetododepagodelusuario{
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.metododepago{
+    grid-column: 1/2;
+    grid-row: 1/span 1;
+    font-size: 42px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size: 40px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 28px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        font-size: 34px;
+        margin-left: 0.2em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 21px;
+        margin-left: 0.2em;
+    }
+}
+
+.metododepagodelusuario{
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+    align-items: center;
+    margin-bottom: -3%;
+    width: 18%;
+    height: 100%;
+    border: 2px solid $colordebordes;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        width: 15%;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        width: 23%;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        margin-bottom: 0;
+        align-self: flex-end;
+        width: 30%;
+        height: 60%;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        margin-bottom: 0;
+        align-self: flex-end;
+        width: 70%;
+        height: 60%;
+    }
+}
+
+.informaciondelacompradelproducto{
+    grid-column: 1/span 1;
+    grid-row: 2/span 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2.5fr;
+    grid-template-rows: 0.5fr repeat(8,1fr) 2fr;
+    border: 2px solid $colordebordes;
+    border-radius: 30px;
+    justify-items: center;
+    align-items: center;
+    
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 0.5fr repeat(8,1fr) 5fr 1fr 2.5fr;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr repeat(16,1fr) 5fr 1fr 2.5fr;
+    }
+}
+
+.nombre{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 2/3;
+    }
+}
+
+.nombredelproducto{
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 3/4;
+    }
+}
+
+.categoria{
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 4/5;
+    }
+}
+
+.categoriadelproducto{
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 5/6;
+    }
+}
+
+.precio{
+    grid-column: 1/2;
+    grid-row: 4/5;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 6/7;
+    }
+}
+
+.preciodelproducto{
+    grid-column: 2/3;
+    grid-row: 4/5;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 7/8;
+    }
+}
+
+.empresa{
+    grid-column: 1/2;
+    grid-row: 5/6;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 8/9;
+    }
+}
+
+.empresadelproducto{
+    grid-column: 2/3;
+    grid-row: 5/6;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 9/10;
+    }
+}
+
+.vendedor{
+    grid-column: 1/2;
+    grid-row: 6/7;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 10/11;
+    }
+}
+
+.vendedordelproducto{
+    grid-column: 2/3;
+    grid-row: 6/7;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 11/12;
+    }
+}
+
+.telefono{
+    grid-column: 1/2;
+    grid-row: 7/8;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 12/13;
+    }
+}
+
+.telefonodelproducto{
+    grid-column: 2/3;
+    grid-row: 7/8;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 13/14;
+    }
+}
+
+.cantidad{
+    grid-column: 1/2;
+    grid-row: 8/9;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 14/15;
+    }
+}
+
+.cantidaddelproducto{
+    grid-column: 2/3;
+    grid-row: 8/9;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 15/16;
+    }
+}
+
+.oferta{
+    grid-column: 1/2;
+    grid-row: 9/10;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 16/17;
+    }
+}
+
+.ofertadelproducto{
+    grid-column: 2/3;
+    grid-row: 9/10;
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 1;
+        grid-row: 17/18;
+    }
+}
+
+.descripciondelainformaciodelproducto{
+    justify-self: flex-start;
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3em;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size: 25px;
+        margin-left: 2em;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 22px;
+        margin-left: 1.2em;
+    }
+
+    @media (min-width : 501px) and (max-width : 768px){
+        font-size: 28px;
+        margin-left: 3em;
+    }
+
+    @media (min-width : 481px) and (max-width : 700px){
+        font-size: 23.5px;
+        margin-left: 1.5em;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 20px;
+        margin-left: 1.5em;
+    }
+}
+
+.informaciodelproducto{
+    justify-self: flex-start;
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2em;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size: 25px;
+        margin-left: 2em;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 22px;
+        margin-left: 0.6em;
+    }
+
+    @media (min-width : 501px) and (max-width : 768px){
+        font-size: 24px;
+        margin-left: 3.5em;
+    }
+
+    @media (min-width : 481px) and (max-width : 500px){
+        font-size: 23.5px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        font-size: 20px;
+        margin-left: 1.5em;
+    }
+}
+
+.contendordeimagendelproducto{
+    grid-column: 3/span 1;
+    grid-row: 2/8;
+    justify-self: center;
+    align-self: center;
+    margin-top: 7%;
+    border: 2px solid black;
+    width: 75%;
+    height: 100%;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        width: 80%;
+        height: 100%;
+    }
+
+    @media (min-width : 931px) and (max-width : 1080px){
+        width: 80%;
+        height: 90%;
+    }
+
+    @media (min-width : 769px) and (max-width : 930px){
+        width: 85%;
+        height: 80%;
+    }
+
+    @media (min-width : 671px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 10/11;
+        width: 40%;
+        height: 80%;
+        margin-top: 0;
+    }
+
+    @media (min-width : 546px) and (max-width : 670px){
+        grid-column: 1/span 2;
+        grid-row: 10/11;
+        width: 45%;
+        height: 75%;
+        margin-top: 0;
+    }
+
+    @media (min-width : 501px) and (max-width : 545px){
+        grid-column: 1/span 2;
+        grid-row: 10/11;
+        width: 80%;
+        height: 80%;
+        margin-top: 0;
+    }
+
+    @media (min-width : 481px) and (max-width : 500px){
+        grid-column: 1/span 2;
+        grid-row: 10/11;
+        width: 60%;
+        height: 80%;
+        margin-top: 0;
+    }
+
+    @media (min-width : 421px) and (max-width : 480px){
+        grid-column: 1/span 2;
+        grid-row: 18/19;
+        width: 50%;
+        height: 80%;
+        margin-top: 0;
+    }
+    
+    @media (min-width : 323px) and (max-width : 420px){
+        grid-column: 1/span 2;
+        grid-row: 18/19;
+        width: 70%;
+        height: 80%;
+        margin-top: 0;
+    }
+
+    @media (min-width : 0px) and (max-width : 322px){
+        grid-column: 1/span 2;
+        grid-row: 18/19;
+        width: 90%;
+        height: 68%;
+        margin-top: 0;
+    }
+}
+
+.contenedordeurldelaimagen{
+    grid-column: 3/span 1;
+    grid-row: 8/10;
+    justify-self: center;
+    align-self: center;
+    width: 75%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    justify-items: flex-start;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 11/12;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 2;
+        grid-row: 19/20;
+    }
+}
+
+.urldelaimagen{
+    grid-column: 1/2;
+    grid-row: 1/span 1;
+    margin-left: 0;
+}
+
+.urldelaimagendelproducto{
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+}
+
+.contenedorbotondecomprarproducto{
+    grid-column: 1/span 3;
+    grid-row: 10/span 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width : 481px) and (max-width : 768px){
+        grid-column: 1/span 2;
+        grid-row: 12/span 1;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        grid-column: 1/span 2;
+        grid-row: 20/span 1;
+    }
+}
+
+.botondecomprarproducto{
+    width: 55%;
+    height: 50%;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $colorprincipaldebotones;
+    border: 2px solid $colordebordes;
+    border-radius: 10px;
+
+    @media (min-width : 1081px) and (max-width : 1279px){
+        font-size: 37px;
+    }
+
+    @media (min-width : 769px) and (max-width : 1080px){
+        font-size: 35px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px){
+        width: 70%;
+        height: 36%;
+        font-size: 32px;
+    }
+
+    @media (min-width : 0px) and (max-width : 480px){
+        width: 70%;
+        height: 50%;
+        font-size: 25px;
+    }
+}
+
+
+/* Pie de pagina */
+
+@include piedepagina($paginadetrabajo,3);
+
+/* ------------------------------------------------------- */

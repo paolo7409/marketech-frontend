@@ -1,52 +1,25 @@
+@import "mixincontenedorgeneral";
 @import "mixinbarradenavegacion";
 @import "mixinpiedepagina";
 @import "mixincarruseldeproductos";
+@import "mixincontenedordeproductos";
+@import "mixincontendordeundeterminadotipodeproductos";
+@import "mixincartadeproducto";
 @import "variables";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-$paginadetrabajo : "paginaprincipal";
+$paginadetrabajo: "paginaprincipal";
 
-.contenedordepaginaprincipal{
-    width: 100%;
-    height: 4500px;
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 80px 500px max-content 80px 300px;
-    grid-gap: 10px;
+/* Pagina Principal */
 
+@include contenedorgeneral($paginadetrabajo,5000px,5000px,4900px,3900px,5000px,4700px,4500px,4000px,true,false);
 
-    @media (max-width : 1200px) {
-        height: 1000px;
-        grid-template-rows: 80px 400px max-content 80px 300px;
-    }
-
-    @media (max-width : 1100px) {
-        height: 1000px;
-        grid-template-rows: 80px 400px max-content 80px 300px;
-    }
-
-    @media (min-width : 481px) and (max-width : 768px) {
-        grid-template-rows: 80px 300px max-content 80px 500px;
-    }
-
-    @media (max-width : 580px) {
-        grid-template-rows: 80px 300px max-content 80px 500px;
-    }
-
-    @media (max-width : 480px) {
-        grid-template-rows: 80px 230px max-content 80px 500px;
-    }
-
-    @media (min-width : 0px) and (max-width : 468px) {
-        height: 5300px;
-        grid-template-rows: 80px 180px max-content 80px 850px;
-    }
-}
+/* ------------------------------------------------------- */
 
 /* Barra de navegacion */
 
@@ -54,310 +27,24 @@ $paginadetrabajo : "paginaprincipal";
 
 /* ------------------------------------------------------- */
 
-
 /* Carrusel de imagenes de productos nuevos y productos en oferta */
 
 @include carruseldeproductos();
 
 /* ------------------------------------------------------- */
 
-
-
 /* Productos en venta de la pagina principal */
 
-.contenedordeproductosenventadelapaginaprincipal{
-    grid-column: 1/span 12;
-    grid-row: 3/4;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(9,1fr);
-    grid-gap: 10px;
+@include contenedordeproductos("productosenventadepaginaprincipal",repeat(9, 1fr) 0.2fr);
 
-    @media (min-width : 769px) and (max-width : 1279px) {
-    }
+@include contendordeundeterminadotipodeproducto($paginadetrabajo,2fr,8fr,2fr,4fr 4fr,0.3fr,repeat(4,1fr));
 
-    @media (max-width : 1200px) {
-    }
+@include cartadeproducto($paginadetrabajo);
 
-    @media (max-width : 1100px) {
-   
-    }
-
-    @media (min-width : 914px) and (max-width : 1000px) {
-        grid-column: 1/span 12;
-        grid-row: 3/4;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(9,1fr);
-        grid-gap: 10px;
-    }
-
-
-    @media (min-width : 481px) and (max-width : 914px) {
-        grid-column: 1/span 12;
-        grid-row: 3/4;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(9,1fr);
-        grid-gap: 10px;
-    }
-
-    @media (min-width : 0px) and (max-width : 480px) {
-        grid-column: 1/span 12;
-        grid-row: 3/4;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(9,1fr);
-        grid-gap: 10px;
-    }
-
-}
-
-.contenedordeundeterminadotipodeproducto{
-    grid-column: 1/span 4;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 2fr 8fr;
-    grid-gap: 25px;
-
-    @media (max-width : 1200px) {
-        height: 80%;
-    }
-
-    @media (max-width : 1100px) {
-        height: 80%;
-    }
-
-
-    @media (min-width : 915px) and (max-width : 1000px) {
-        grid-column: 1/span 2;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: 1fr 4.5fr 4.5fr;
-        grid-gap: 55px;
-    }
-
-    @media (min-width : 481px) and (max-width : 914px) {
-        grid-column: 1/span 2;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2fr 4fr 4fr;
-        grid-gap: 40px;
-    }
-
-
-    @media (min-width : 0px) and (max-width : 480px) {
-        grid-column: 1/2;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2.25fr 2.25fr 2.25fr 2.25fr;
-        grid-gap: 30px;
-    }
-}
-
-.titulodeundeterminadoconjuntodeproductos{
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-self: flex-start;
-    align-self: center;
-    z-index: 10;
-
-    @media (min-width : 481px) and (max-width : 914px) {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
-    @media (min-width : 0px) and (max-width : 480px) {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-}
-
-.contenedordeproducto{
-    z-index: 10;
-    grid-row: 2/span 1;
-    border: 2px solid $colordebordes;
-    border-radius: 15px;
-    display: grid;
-    grid-template-rows: 6.5fr 3.5fr;
-
-    @media (max-width : 1279px) {
-        height: 85%;
-    }
-
-    @media (max-width : 1200px) {
-        margin-top: 60px;
-        height: 70%;
-    }
-
-    @media (max-width : 1100px) {
-        margin-top: 60px;
-        height: 65%;
-    }
-
-    @media (min-width : 915px) and (max-width : 1000px) {
-        grid-column: 1/span 1;
-        grid-row: 2/ span 1;
-        height: 100%;
-    }
-
-    @media (min-width : 664px) and (max-width : 914px) {
-        height: 88%;
-        margin-top: 60px;
-    }
-
-    @media (min-width : 561px) and (max-width : 665px) {
-        height: 83%;
-        margin-top: 60px;
-    }
-
-    @media (min-width : 420px) and (max-width : 560px) {
-        height: 65%;
-        margin-top: 60px;
-    }
-
-    @media (min-width : 488px) and (max-width : 519px) {
-        height: 60%;
-        margin-top: 60px;
-    }
-
-    @media (min-width : 481px) and (max-width : 487px) {
-        height: 45%;
-        margin-top: 60px;
-    }
-
-    @media (min-width : 351px) and (max-width : 480px) {
-        height: 100%;
-        grid-column: 1/2;
-        grid-row: 2/3;
-    }
-
-    @media (min-width : 0px) and (max-width : 350px) {
-        height: 80%;
-        grid-column: 1/2;
-        grid-row: 2/3;
-    }
-}
-
-.contenedordeproducto2{
-
-    z-index: 10;
-
-
-
-
-    @media (min-width : 915px) and (max-width : 1000px) {
-        grid-column: 2/span 1;
-        grid-row: 2/ span 1;
-    }
-
-    @media (min-width : 481px) and (max-width : 914px) {
-        grid-column: 2/span 1;
-        grid-row: 2/ span 1;
-    }
-
-    @media (min-width : 0px) and (max-width : 480px) {
-        grid-column: 1/2;
-        grid-row: 3/4;
-    }
-}
-
-.contenedordeproducto3{
-
-    z-index: 10;
-
-
-
-
-    @media (min-width : 915px) and (max-width : 1000px) {
-        grid-column: 1/span 1;
-        grid-row: 3/ span 1;
-    }
-
-    @media (min-width : 481px) and (max-width : 914px) {
-        grid-column: 1/span 1;
-        grid-row: 3/ span 1;
-    }
-
-    @media (min-width : 0px) and (max-width : 480px) {
-        grid-column: 1/2;
-        grid-row: 4/5;
-    }
-}
-
-.contenedordeproducto4{
-
-    z-index: 10;
-
-
-
-    @media (min-width : 915px) and (max-width : 1000px) {
-        grid-column: 2/span 1;
-        grid-row: 3/ span 1;
-    }
-
-    @media (min-width : 481px) and (max-width : 914px) {
-        grid-column: 2/span 1;
-        grid-row: 3/ span 1;
-    }
-
-    @media (min-width : 0px) and (max-width : 480px) {
-        grid-column: 1/2;
-        grid-row: 5/span 1;
-    }
-}
-
-.imagendeproducto{
-    grid-row: 1/2;
-    border-bottom: 2px solid $colordebordes;
-}
-
-.contenidodeimagen{
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.informaciondeproducto{
-    grid-row: 2/span 1;
-    display: grid;
-    grid-template-rows: repeat(3,1fr);
-    justify-items: center;
-    align-items: center;
-}
-
-.nombredeproducto{
-    color: $colordebordes;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-
-}
-.preciodeproducto{
-    color: $colordebordes;
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    @media (max-width : 1100px) {
-        align-self: center;
-    }
-
-}
-.ofertadeproducto{
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: $colordedescuentodeunproducto;
-    @media (max-width : 1100px) {
-        align-self: flex-start;
-    }
-
-}
 /* ------------------------------------------------------- */
-
 
 /* Pie de pagina */
 
-@include piedepagina($paginadetrabajo,5);
+@include piedepagina($paginadetrabajo, 4);
 
 /* ------------------------------------------------------- */

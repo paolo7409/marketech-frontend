@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/2035/2035878.svg">
     <link rel="stylesheet" href="/CSS/paginadecategorias.css">
-    <title>Document</title>
+    <title>Categorias</title>
 </head>
 <body>
 
@@ -14,33 +15,41 @@
                 <div class="titulodecategorias">Categorias</div>
             </div>
             <div class="contenedordeopcionescategorias">
-                <a href="#" class="tecnologia categoria">
+                <a href="#" class="tecnologia categoria" id="tecnologia">
                     <div class="descripciondecategoria">Tecnologia</div>
                 </a>
-                <a href="#" class="entretenimiento categoria">
+                <a href="#" class="entretenimiento categoria" id="entretenimiento">
                     <div class="descripciondecategoria">Entretenimiento</div>
                 </a>
-                <a href="#" class="deporte categoria">
+                <a href="#" class="deporte categoria" id="deporte">
                     <div class="descripciondecategoria">Deporte</div>
                 </a>
-                <a href="#" class="ropa categoria">
+                <a href="#" class="ropa categoria" id="ropa">
                     <div class="descripciondecategoria">Ropa</div>
                 </a>
-                <a href="#" class="muebles categoria">
+                <a href="#" class="muebles categoria" id="muebles">
                     <div class="descripciondecategoria">Muebles</div>
                 </a>
-                <a href="#" class="autos categoria">
+                <a href="#" class="autos categoria" id="autos">
                     <div class="descripciondecategoria">Autos</div>
                 </a>
-                <a href="#" class="libros categoria">
+                <a href="#" class="libros categoria" id="libros">
                     <div class="descripciondecategoria">Libros</div>
                 </a>
             </div>
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
     <script src="/Javascript/componentebarradenavegacion.js"></script>
-    <script src="/Javascript/componentepiedepagina.js"></script>
+    <script src="/Javascript/componentecontenedordeproductos.js"></script>
+    <script src="/Javascript/componentecartadeproducto.js"></script>
+    <script src="/Javascript/componentecartadeproductodelusuario.js"></script>
+    <script src="/Javascript//componentepiedepagina.js"></script>
+    <script src="/Javascript/configuraciondelabasededatos.js"></script>
+    <script src="/Javascript/usuarios.js"></script>
+    <script src="/Javascript/productos.js"></script>
     <script src="/Javascript/paginadecategorias.js"></script>
 </body>
 </html>

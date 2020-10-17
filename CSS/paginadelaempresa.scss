@@ -13,7 +13,7 @@ $paginadetrabajo : "paginadelaempresa";
 
 /* Contenedor de pagina de categorias */
 
-@include contenedorgeneral($paginadetrabajo,2000px,1900px,1900px,1900px,1900px,2000px,2000px);
+@include contenedorgeneral($paginadetrabajo,2000px,1900px,1900px,1900px,1900px,2000px,2000px,0,false,false);
 
 /* ------------------------------------------------------- */
 
