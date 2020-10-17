@@ -9,7 +9,7 @@ let barradenavegacionpaginadeopcionesdelusuario = new BarradeNavegacion(
   "Ofertas",
   "paginadelaempresa.html",
   "Nosotoros",
-  "paginaprincipal.html",
+  "index.html",
   "Cerrar Sesion"
 );
 barradenavegacionpaginadeopcionesdelusuario.agregarloalbody();
@@ -40,7 +40,7 @@ const usardatosdeusuarioenlapaginadelasopcionesdelusuario = () => {
       localStorage.setItem("usuarioactivodelaaplicacion", usuarioactivo);
       console.log(usuarioactivo);
       console.log("el usuario cerro sesion");
-      window.location.href = "paginaprincipal.html";
+      window.location.href = "index.html";
       e.preventDefault();
     });
 

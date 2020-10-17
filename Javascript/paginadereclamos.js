@@ -9,7 +9,7 @@ let barradenavegacionpaginadereclamos = new BarradeNavegacion(
   "Ofertas",
   "paginadelaempresa.html",
   "Nosotoros",
-  "paginaprincipal.html",
+  "index.html",
   "Cerrar Sesion"
 );
 barradenavegacionpaginadereclamos.agregarloalbody();

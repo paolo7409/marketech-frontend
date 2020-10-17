@@ -9,7 +9,7 @@ let barradenavegacionpaginadebusquedadeproducto = new BarradeNavegacion(
   "Ofertas",
   "paginadelaempresa.html",
   "Nosotoros",
-  "paginaprincipal.html",
+  "index.html",
   "Cerrar Sesion"
 );
 barradenavegacionpaginadebusquedadeproducto.agregarloalbody();

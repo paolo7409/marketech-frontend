@@ -9,7 +9,7 @@ let barradenavegacionpaginadefondosdelusuario = new BarradeNavegacion(
   "Ofertas",
   "paginadelaempresa.html",
   "Nosotoros",
-  "paginaprincipal.html",
+  "index.html",
   "Cerrar Sesion"
 );
 barradenavegacionpaginadefondosdelusuario.agregarloalbody();
